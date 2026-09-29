@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — eGreen Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/chat.css">
+</head>
+<body data-page="chatbot">
+
+<main id="page">
+
+    <div class="chat-layout">
+        <aside class="chat-side reveal">
+            <span class="eyebrow">Ask anything</span>
+            <h1>eGreen <span class="hl">Assistant</span></h1>
+            <p>Instant answers about orders, pickups, payments and produce. No queue, no hold music.</p>
+            <div class="topics" id="topics"></div>
+            <div class="chat-note"><i class='bx bx-info-circle'></i><span>This is a rule-based assistant running on your device. It knows the catalogue, hubs and your orders, but it is not a live agent.</span></div>
+        </aside>
+        <section class="chat-card" aria-label="Chat with eGreen Assistant">
+            <header class="chat-top">
+                <span class="bot-av"><i class='bx bxs-leaf'></i></span>
+                <div><b>eGreen Assistant</b><small><i class="live"></i> Online · replies instantly</small></div>
+                <button class="icon-btn" id="chatClear" aria-label="Clear conversation" title="Clear conversation"><i class='bx bx-trash'></i></button>
+            </header>
+            <div class="chat-feed" id="feed" aria-live="polite"></div>
+            <div class="chat-chips" id="chips"></div>
+            <form class="chat-form" id="chatForm" autocomplete="off">
+                <input id="chatInput" placeholder="Ask about pickups, prices, your order…" aria-label="Your message" maxlength="300">
+                <button class="btn btn-primary" type="submit" aria-label="Send"><i class='bx bxs-send'></i></button>
+            </form>
+        </section>
+    </div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/chatbot.js"></script>
+</body>
+</html>

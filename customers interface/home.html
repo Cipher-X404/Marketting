@@ -3,360 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketLink — Fresh Near You</title>
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Fresh from the farm, this week</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/theme.css">
-    <link rel="stylesheet" href="./assets/css/customer.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
     <link rel="stylesheet" href="./assets/css/home.css">
 </head>
-<body>
+<body data-page="home">
 
-    <!-- ===================== TOP BAR ===================== -->
-    <header class="cu-topbar">
-        <div class="cu-topbar-inner">
-            <a href="home.html" class="cu-brand" aria-label="MarketLink customers home">
-                <span class="cu-brand-mark"><i class="bx bx-basket"></i></span>
-                <span class="cu-brand-name">Market<em>Link</em></span>
-            </a>
+<main id="page">
 
-            <label class="cu-search">
-                <i class="bx bx-search"></i>
-                <input type="search" placeholder="Search tomatoes, farms, pickup hubs...">
-                <kbd>/</kbd>
-            </label>
-
-            <div class="cu-topbar-actions">
-                <button class="cu-icon-btn hide-m" data-theme-toggle aria-label="Toggle theme">
-                    <i class="bx bx-sun" data-theme-icon></i>
-                </button>
-                <a href="notifications.html" class="cu-icon-btn hide-m" aria-label="Notifications">
-                    <i class="bx bx-bell"></i>
-                </a>
-                <button class="cu-icon-btn" data-cart-open aria-label="Open basket">
-                    <i class="bx bx-basket"></i>
-                    <span class="cu-cart-count" data-cart-count>0</span>
-                </button>
-                <a href="profile.html" class="cu-avatar-btn" aria-label="Your profile">
-                    <img src="https://ui-avatars.com/api/?name=Adaeze+Okafor&background=16A34A&color=fff&bold=true" alt="Adaeze Okafor">
-                </a>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow" id="greet"><i class='bx bx-sun' style="font-size:16px"></i> Good morning</p>
+            <h1>What should the <span class="hl">farm</span> cut for&nbsp;you?</h1>
+            <p class="lead">Everything in this market is still growing. Reserve now and collect at <b id="heroHub">your hub</b> right after harvest.</p>
+            <form class="hero-search" action="marketplace.html" role="search">
+                <i class='bx bx-search'></i>
+                <input type="search" name="q" placeholder="Try “tomatoes”, “yam” or “Green Valley”" aria-label="Search the market">
+                <button class="btn btn-primary" type="submit">Search <i class='bx bx-right-arrow-alt go'></i></button>
+            </form>
+            <div class="hero-quick"><span>Popular:</span>
+                <a href="marketplace.html?q=tomato">Tomatoes</a><a href="marketplace.html?q=yam">Yam</a><a href="marketplace.html?cat=fruits">Mangoes &amp; fruit</a><a href="marketplace.html?q=eggs">Eggs</a>
             </div>
         </div>
-    </header>
 
-    <!-- ===================== SECTION NAV ===================== -->
-    <nav class="cu-sectionnav" aria-label="Marketplace sections">
-        <div class="cu-sectionnav-inner">
-            <a href="home.html" class="cu-snav-link active"><i class="bx bx-store-alt"></i> Discover</a>
-            <a href="marketplace.html" class="cu-snav-link"><i class="bx bx-grid"></i> Marketplace</a>
-            <a href="map.html" class="cu-snav-link"><i class="bx bx-map"></i> Farms & Hubs</a>
-            <a href="orders.html" class="cu-snav-link"><i class="bx bx-receipt"></i> My Orders</a>
-            <a href="favorites.html" class="cu-snav-link"><i class="bx bx-heart"></i> Favorites</a>
-            <a href="chatbot.html" class="cu-snav-link"><i class="bx bx-bot"></i> eGreen Assistant <span class="link-chip">New</span></a>
-        </div>
-    </nav>
-
-    <!-- ===================== MAIN ===================== -->
-    <main class="cu-main">
-
-        <!-- Greeting strip -->
-        <section class="home-hero reveal">
-            <div class="hero-copy">
-                <p class="hero-kicker"><i class="bx bx-sun"></i> <span id="daypart">Good morning</span>, Adaeze</p>
-                <h1>What should your<br>farmers cut for you?</h1>
-                <p class="hero-sub">Everything below is still growing. Reserve today, collect at <strong>Yaba Hub</strong> after harvest.</p>
-            </div>
-            <div class="hero-pickup-card">
-                <div class="hp-icon"><i class="bx bx-calendar-check"></i></div>
-                <div class="hp-info">
-                    <span class="hp-label">Next pickup window</span>
-                    <strong>Saturday, Oct 3</strong>
-                    <span class="hp-meta"><i class="bx bx-time-five"></i> 8:00 AM – 11:00 AM</span>
-                    <span class="hp-meta"><i class="bx bx-map-pin"></i> Yaba Community Hub · 1.2 km</span>
-                </div>
-                <a href="map.html" class="cu-btn cu-btn-ghost">Change hub</a>
-            </div>
-        </section>
-
-        <!-- Category rail -->
-        <div class="cu-chip-rail reveal" id="categoryRail">
-            <button class="cu-chip active" data-cat="all"><i class="bx bx-grid-alt"></i> Everything</button>
-            <button class="cu-chip" data-cat="greens"><i class="bx bx-leaf"></i> Leafy Greens</button>
-            <button class="cu-chip" data-cat="tubers"><i class="bx bx-bowl-rice"></i> Roots & Tubers</button>
-            <button class="cu-chip" data-cat="peppers"><i class="bx bx-restaurant"></i> Peppers & Spice</button>
-            <button class="cu-chip" data-cat="fruits"><i class="bx bx-lemon"></i> Fruits</button>
-            <button class="cu-chip" data-cat="grains"><i class="bx bx-wheat"></i> Grains & Legumes</button>
-            <button class="cu-chip" data-cat="dairy"><i class="bx bx-water"></i> Dairy & Eggs</button>
-        </div>
-
-        <!-- Harvest banner -->
-        <section class="harvest-banner reveal">
-            <div class="hb-text">
-                <span class="cu-badge warning"><i class="bx bx-time-five"></i> Harvest locks Friday 6 PM</span>
-                <h2>Pre-order before the cut.</h2>
-                <p>Farmers harvest only what is reserved. Lock your basket before Friday evening and it is pulled from the soil Saturday morning.</p>
-            </div>
-            <div class="hb-countdown" id="countdown" aria-label="Time left to pre-order">
-                <div class="cd-cell"><strong data-cd="d">2</strong><span>days</span></div>
-                <div class="cd-sep">:</div>
-                <div class="cd-cell"><strong data-cd="h">14</strong><span>hrs</span></div>
-                <div class="cd-sep">:</div>
-                <div class="cd-cell"><strong data-cd="m">36</strong><span>min</span></div>
-            </div>
-        </section>
-
-        <!-- Featured farms -->
-        <div class="cu-section-head reveal">
-            <div>
-                <h2>Farms near you</h2>
-                <p class="sub">Verified growers delivering to Yaba Hub this week.</p>
-            </div>
-            <a href="map.html" class="cu-section-link">Open map <i class="bx bx-right-arrow-alt"></i></a>
-        </div>
-
-        <div class="cu-farm-rail reveal">
-            <a href="marketplace.html" class="cu-farm-card">
-                <div class="cu-farm-cover">
-                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=700&q=70" alt="Green Valley Farm fields">
-                    <span class="cu-farm-dist"><i class="bx bx-map-pin"></i> 4.8 km</span>
-                </div>
-                <div class="cu-farm-body">
-                    <div class="cu-farm-title"><h3>Green Valley Farm</h3><i class="bx bxs-badge-check"></i></div>
-                    <span class="cu-farm-meta"><i class="bx bx-map"></i> Epe, Lagos · 14 crops listed</span>
-                    <div class="cu-farm-foot">
-                        <span class="cu-stars"><i class="bx bxs-star"></i> 4.9 <span class="count">(212)</span></span>
-                        <span class="visit">Browse crops <i class="bx bx-right-arrow-alt"></i></span>
+        <aside class="ticket reveal" id="ticket" style="--i:2" aria-label="Your next pickup">
+            <div class="ticket-main">
+                <span class="stamp lime">Next pickup</span>
+                <h2 id="tkDate">Saturday</h2>
+                <p class="tk-when"><i class='bx bx-time-five'></i> <span id="tkWindow">8:00 AM – 11:00 AM</span></p>
+                <p class="tk-where"><i class='bx bx-map-pin'></i> <span id="tkHub">Yaba Community Hub</span></p>
+                <div class="tk-count" aria-label="Time left to reserve">
+                    <small>Harvest locks in</small>
+                    <div class="flip" id="flip">
+                        <div><b data-u="d">0</b><span>days</span></div><em>:</em>
+                        <div><b data-u="h">0</b><span>hrs</span></div><em>:</em>
+                        <div><b data-u="m">0</b><span>min</span></div><em>:</em>
+                        <div><b data-u="s">0</b><span>sec</span></div>
                     </div>
                 </div>
-            </a>
-
-            <a href="marketplace.html" class="cu-farm-card">
-                <div class="cu-farm-cover">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=700&q=70" alt="Ibe Organic Crops greenhouse">
-                    <span class="cu-farm-dist"><i class="bx bx-map-pin"></i> 6.1 km</span>
-                </div>
-                <div class="cu-farm-body">
-                    <div class="cu-farm-title"><h3>Ibe Organic Crops</h3><i class="bx bxs-badge-check"></i></div>
-                    <span class="cu-farm-meta"><i class="bx bx-map"></i> Ogun State · 9 crops listed</span>
-                    <div class="cu-farm-foot">
-                        <span class="cu-stars"><i class="bx bxs-star"></i> 4.8 <span class="count">(164)</span></span>
-                        <span class="visit">Browse crops <i class="bx bx-right-arrow-alt"></i></span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="marketplace.html" class="cu-farm-card">
-                <div class="cu-farm-cover">
-                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=700&q=70" alt="Plateau Harvest Co-op terraced farm">
-                    <span class="cu-farm-dist"><i class="bx bx-map-pin"></i> 9.3 km</span>
-                </div>
-                <div class="cu-farm-body">
-                    <div class="cu-farm-title"><h3>Plateau Harvest Co-op</h3><i class="bx bxs-badge-check"></i></div>
-                    <span class="cu-farm-meta"><i class="bx bx-map"></i> Jos North · 22 crops listed</span>
-                    <div class="cu-farm-foot">
-                        <span class="cu-stars"><i class="bx bxs-star"></i> 4.7 <span class="count">(98)</span></span>
-                        <span class="visit">Browse crops <i class="bx bx-right-arrow-alt"></i></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <!-- Fresh today grid -->
-        <div class="cu-section-head reveal">
-            <div>
-                <h2>Cutting this Saturday</h2>
-                <p class="sub">Live pre-orders from farms matched to your hub.</p>
-            </div>
-            <a href="marketplace.html" class="cu-section-link">Full marketplace <i class="bx bx-right-arrow-alt"></i></a>
-        </div>
-
-        <div class="cu-grid-products reveal" id="freshGrid">
-            <article class="cu-product" data-cat="peppers">
-                <div class="cu-product-media">
-                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=70" alt="Scotch Bonnet peppers">
-                    <span class="cu-product-tag fresh">Still growing</span>
-                    <button class="cu-fav-btn" aria-label="Save to favorites"><i class="bx bx-heart"></i></button>
-                </div>
-                <div class="cu-product-body">
-                    <h3 class="cu-product-name">Scotch Bonnet (Rodo)</h3>
-                    <span class="cu-product-farm"><i class="bx bxs-badge-check"></i> Green Valley Farm</span>
-                    <div class="cu-product-foot">
-                        <div class="cu-price"><span class="amount">&#8358;3,500</span><span class="unit">per medium basket</span></div>
-                        <button class="cu-add-btn" data-add-to-cart data-id="rodo-basket" data-name="Scotch Bonnet (Rodo)" data-price="3500" data-unit="basket" data-img="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=200&q=60"><i class="bx bx-plus"></i><span>Add</span></button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cu-product" data-cat="greens">
-                <div class="cu-product-media">
-                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=70" alt="Pumpkin leaves ugwu">
-                    <span class="cu-product-tag deal">&#8358;200 off</span>
-                    <button class="cu-fav-btn" aria-label="Save to favorites"><i class="bx bx-heart"></i></button>
-                </div>
-                <div class="cu-product-body">
-                    <h3 class="cu-product-name">Pumpkin Leaves (Ugwu)</h3>
-                    <span class="cu-product-farm"><i class="bx bxs-badge-check"></i> Ibe Organic Crops</span>
-                    <div class="cu-product-foot">
-                        <div class="cu-price"><span class="amount">&#8358;1,200</span><span class="unit">per bundle</span></div>
-                        <button class="cu-add-btn" data-add-to-cart data-id="ugwu-bundle" data-name="Pumpkin Leaves (Ugwu)" data-price="1200" data-unit="bundle" data-img="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=200&q=60"><i class="bx bx-plus"></i><span>Add</span></button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cu-product" data-cat="greens">
-                <div class="cu-product-media">
-                    <img src="https://images.unsplash.com/photo-1592417817098-8f3d69104a47?auto=format&fit=crop&w=600&q=70" alt="Vine-ripened plum tomatoes">
-                    <span class="cu-product-tag fresh">Still growing</span>
-                    <button class="cu-fav-btn" aria-label="Save to favorites"><i class="bx bx-heart"></i></button>
-                </div>
-                <div class="cu-product-body">
-                    <h3 class="cu-product-name">Plum Tomatoes</h3>
-                    <span class="cu-product-farm"><i class="bx bxs-badge-check"></i> Plateau Harvest Co-op</span>
-                    <div class="cu-product-foot">
-                        <div class="cu-price"><span class="amount">&#8358;4,800</span><span class="unit">per crate</span></div>
-                        <button class="cu-add-btn" data-add-to-cart data-id="tomato-crate" data-name="Plum Tomatoes" data-price="4800" data-unit="crate" data-img="https://images.unsplash.com/photo-1592417817098-8f3d69104a47?auto=format&fit=crop&w=200&q=60"><i class="bx bx-plus"></i><span>Add</span></button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cu-product" data-cat="tubers">
-                <div class="cu-product-media">
-                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=70" alt="Orange flesh sweet potatoes">
-                    <button class="cu-fav-btn" aria-label="Save to favorites"><i class="bx bx-heart"></i></button>
-                </div>
-                <div class="cu-product-body">
-                    <h3 class="cu-product-name">Sweet Potatoes (Orange Flesh)</h3>
-                    <span class="cu-product-farm"><i class="bx bxs-badge-check"></i> Sunrise Agro Farms</span>
-                    <div class="cu-product-foot">
-                        <div class="cu-price"><span class="amount">&#8358;2,800</span><span class="unit">per 5kg bag</span></div>
-                        <button class="cu-add-btn" data-add-to-cart data-id="sp-bag" data-name="Sweet Potatoes (Orange Flesh)" data-price="2800" data-unit="5kg bag" data-img="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=200&q=60"><i class="bx bx-plus"></i><span>Add</span></button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cu-product" data-cat="fruits">
-                <div class="cu-product-media">
-                    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=70" alt="Fresh mangoes">
-                    <span class="cu-product-tag deal">Season peak</span>
-                    <button class="cu-fav-btn" aria-label="Save to favorites"><i class="bx bx-heart"></i></button>
-                </div>
-                <div class="cu-product-body">
-                    <h3 class="cu-product-name">Tree-Ripened Mangoes</h3>
-                    <span class="cu-product-farm"><i class="bx bxs-badge-check"></i> Green Valley Farm</span>
-                    <div class="cu-product-foot">
-                        <div class="cu-price"><span class="amount">&#8358;2,000</span><span class="unit">per dozen</span></div>
-                        <button class="cu-add-btn" data-add-to-cart data-id="mango-dozen" data-name="Tree-Ripened Mangoes" data-price="2000" data-unit="dozen" data-img="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=200&q=60"><i class="bx bx-plus"></i><span>Add</span></button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cu-product" data-cat="dairy">
-                <div class="cu-product-media">
-                    <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=600&q=70" alt="Free range eggs in a crate">
-                    <button class="cu-fav-btn" aria-label="Save to favorites"><i class="bx bx-heart"></i></button>
-                </div>
-                <div class="cu-product-body">
-                    <h3 class="cu-product-name">Free-Range Eggs</h3>
-                    <span class="cu-product-farm"><i class="bx bxs-badge-check"></i> Plateau Harvest Co-op</span>
-                    <div class="cu-product-foot">
-                        <div class="cu-price"><span class="amount">&#8358;2,500</span><span class="unit">per crate of 30</span></div>
-                        <button class="cu-add-btn" data-add-to-cart data-id="eggs-crate" data-name="Free-Range Eggs" data-price="2500" data-unit="crate" data-img="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=200&q=60"><i class="bx bx-plus"></i><span>Add</span></button>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <!-- How pickup works -->
-        <section class="pickup-steps reveal">
-            <h2>How your basket gets to you</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <i class="bx bx-basket step-icon"></i>
-                    <h3>Reserve before Friday</h3>
-                    <p>Fill your basket at farm-gate prices. Your reservation tells the farmer exactly what to cut.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <i class="bx bx-sun step-icon"></i>
-                    <h3>Harvested Saturday dawn</h3>
-                    <p>Crops stay rooted until pickup morning. Nothing sits in a lorry or a cold room.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <i class="bx bx-package step-icon"></i>
-                    <h3>Collect at your hub</h3>
-                    <p>Show your pickup code at Yaba Hub between 8 and 11 AM. That is the whole chain.</p>
+                <div class="tk-actions">
+                    <button class="btn btn-ghost btn-sm" data-hub-picker><i class='bx bx-transfer'></i> Change hub</button>
+                    <a class="btn btn-lime btn-sm" href="marketplace.html">Reserve produce</a>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="ticket-stub" aria-hidden="true"><span>ADMIT ONE BASKET</span><i class="bars" id="bars"></i></div>
+        </aside>
+    </section>
 
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="cu-footer">
-        <div class="cu-footer-inner">
-            <div>
-                <p class="tagline">The shortest distance between <em>soil</em> and <em>table</em>.</p>
-            </div>
-            <div class="cu-footer-col">
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="map.html">Farms & hubs</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                </ul>
-            </div>
-            <div class="cu-footer-col">
-                <h4>Account</h4>
-                <ul>
-                    <li><a href="orders.html">My orders</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="settings.html">Settings</a></li>
-                </ul>
-            </div>
-            <div class="cu-footer-col">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="chatbot.html">eGreen Assistant</a></li>
-                    <li><a href="../index.html">About MarketLink</a></li>
-                    <li><a href="../farmers%20interface/auth.html">Sell with us</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="cu-footer-base">&copy; 2026 MarketLink · eGreen Basket · Fair trade agriculture</div>
-    </footer>
+    <!-- active order banner (signed in only) -->
+    <div id="activeBanner"></div>
 
-    <!-- ===================== MOBILE TAB BAR ===================== -->
-    <nav class="cu-mobilebar" aria-label="Mobile navigation">
-        <div class="cu-mobilebar-inner">
-            <a href="home.html" class="cu-mtab active"><i class="bx bx-store-alt"></i><span>Discover</span></a>
-            <a href="marketplace.html" class="cu-mtab"><i class="bx bx-grid"></i><span>Market</span></a>
-            <button class="cu-mtab" data-cart-open><i class="bx bx-basket"></i><span>Basket</span><span class="m-dot" data-cart-count>0</span></button>
-            <a href="orders.html" class="cu-mtab"><i class="bx bx-receipt"></i><span>Orders</span></a>
-            <a href="profile.html" class="cu-mtab"><i class="bx bx-user"></i><span>Profile</span></a>
-        </div>
-    </nav>
+    <!-- ============ TICKER ============ -->
+    <div class="marquee reveal" aria-label="Fresh this week" id="marquee"><div class="marquee-track" id="marqueeTrack"></div></div>
 
-    <!-- ===================== CART DRAWER ===================== -->
-    <div class="cu-overlay"></div>
-    <aside class="cu-drawer" aria-label="Basket">
-        <div class="cu-drawer-head">
-            <h3>Your basket <span class="count-pill" data-drawer-pill>0 items</span></h3>
-            <button class="cu-icon-btn" data-cart-close aria-label="Close basket"><i class="bx bx-x"></i></button>
-        </div>
-        <div class="cu-drawer-body" data-drawer-body></div>
-        <div class="cu-drawer-foot">
-            <div class="cu-drawer-total"><span>Basket total</span><strong data-drawer-total>&#8358;0</strong></div>
-            <a href="cart.html" class="cu-btn cu-btn-primary cu-btn-block">Review & checkout <i class="bx bx-right-arrow-alt"></i></a>
-        </div>
-    </aside>
+    <!-- ============ STALLS ============ -->
+    <div class="sec-head reveal">
+        <div><h2>Walk the <span class="hl">stalls</span></h2><p>Six aisles, one basket. Pick a stall to start.</p></div>
+        <a class="link" href="marketplace.html">All produce <i class='bx bx-right-arrow-alt'></i></a>
+    </div>
+    <div class="stalls" id="stalls"></div>
 
-    <script src="./assets/js/customer.js"></script>
+    <!-- ============ STILL GROWING ============ -->
+    <div class="sec-head reveal">
+        <div><h2>Still in the ground</h2><p>Reserve today, and it is cut on your pickup morning.</p></div>
+        <div class="rail-arrows"><button class="icon-btn" id="railPrev" aria-label="Scroll left"><i class='bx bx-chevron-left'></i></button><button class="icon-btn" id="railNext" aria-label="Scroll right"><i class='bx bx-chevron-right'></i></button></div>
+    </div>
+    <div class="rail" id="rail"></div>
+
+    <!-- ============ CALENDAR ============ -->
+    <div class="sec-head reveal">
+        <div><h2>This week's <span class="hl">pickup</span> calendar</h2><p>Hubs open on different days. Tap a hub to see it on the map.</p></div>
+    </div>
+    <div class="cal" id="cal"></div>
+
+    <!-- ============ FARMS ============ -->
+    <div class="sec-head reveal">
+        <div><h2>Farms near your hub</h2><p id="farmSub">Verified growers delivering this week.</p></div>
+        <a class="link" href="map.html">Open the map <i class='bx bx-right-arrow-alt'></i></a>
+    </div>
+    <div class="farms" id="farms"></div>
+
+    <!-- ============ REORDER ============ -->
+    <div id="reorderWrap"></div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how reveal">
+        <h2>How a basket <span class="hl">travels</span></h2>
+        <div class="how-grid">
+            <svg class="vine" viewBox="0 0 900 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 110 -10, 190 70, 300 30 S 490 -10, 600 30 S 790 70, 900 30" pathLength="1"/></svg>
+            <div class="step"><div class="num">01</div><i class='bx bx-bookmark-alt-plus'></i><h3>Reserve before the lock</h3><p>Fill your basket at farm-gate prices. Your reservation tells the farmer exactly what to cut.</p></div>
+            <div class="step"><div class="num">02</div><i class='bx bx-sun'></i><h3>Harvested at dawn</h3><p>Crops stay rooted until pickup morning. Nothing sits in a lorry or a cold room.</p></div>
+            <div class="step"><div class="num">03</div><i class='bx bx-package'></i><h3>Collect with your code</h3><p>Show your pickup code at the hub during your window. That is the whole chain.</p></div>
+        </div>
+    </section>
+
+    <!-- ============ FARMER CTA ============ -->
+    <section class="cta reveal">
+        <div><span class="stamp">For growers</span><h2>Grow food? Sell it <span class="hl">directly.</span></h2><p>Set your own price, take pre-orders before you harvest, and keep the margin that middlemen used to take.</p></div>
+        <a class="btn btn-lime btn-lg" href="../farmers%20interface/auth.html"><i class='bx bx-leaf'></i> Open the farmer workspace</a>
+    </section>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
     <script src="./assets/js/home.js"></script>
 </body>
 </html>

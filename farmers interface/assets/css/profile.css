@@ -867,7 +867,7 @@ a {
 .cover-photo {
     height: 200px;
     background: linear-gradient(to right, #15803D, #84CC16); /* Fallback */
-    background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+    background-image: url('../../../assets/images/farms/sunrise-agro.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1087,7 +1087,7 @@ a {
 .farm-image-map {
     height: 120px;
     border-radius: 8px;
-    background-image: url('https://images.unsplash.com/photo-1595841696677-6489ff3f8c0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+    background-image: url('../../../assets/images/products/veg-basket.jpg');
     background-size: cover;
     background-position: center;
     margin-bottom: 16px;

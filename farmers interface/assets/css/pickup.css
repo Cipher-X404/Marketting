@@ -1,4 +1,4 @@
-@import "./theme.css";
+@import "../../../assets/css/theme.css";
 @import "./dashboard.css"; /* Inherit sidebar and header styles */
 
 .page-header {

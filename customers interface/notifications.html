@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Notifications</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/notifications.css">
+</head>
+<body data-page="notifications" data-guard="auth">
+
+<main id="page">
+
+    <div class="page-head reveal">
+        <div>
+            <span class="eyebrow">Inbox</span>
+            <h1><span class="hl">Notifications</span></h1>
+            <p id="nLead">Order updates, pickup reminders and news from your farms.</p>
+        </div>
+        <div class="n-actions">
+            <button class="btn btn-soft" id="markAll"><i class='bx bx-check-double'></i> Mark all read</button>
+            <button class="btn btn-ghost" id="clearAll"><i class='bx bx-trash'></i> Clear</button>
+            <a class="btn btn-ghost" href="settings.html#notifications"><i class='bx bx-cog'></i> Preferences</a>
+        </div>
+    </div>
+    <div class="tabs" id="nTabs" role="tablist">
+        <button class="tab-btn active" data-tab="all" role="tab">All <span class="n" data-n="all">0</span></button>
+        <button class="tab-btn" data-tab="orders" role="tab">Orders</button>
+        <button class="tab-btn" data-tab="pickup" role="tab">Pickup</button>
+        <button class="tab-btn" data-tab="offers" role="tab">Offers</button>
+        <button class="tab-btn" data-tab="system" role="tab">System</button>
+    </div>
+    <div class="n-list" id="nList"></div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/notifications.js"></script>
+</body>
+</html>

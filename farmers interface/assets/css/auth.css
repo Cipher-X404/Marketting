@@ -1,4 +1,4 @@
-@import "./theme.css";
+@import "../../../assets/css/theme.css";
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 

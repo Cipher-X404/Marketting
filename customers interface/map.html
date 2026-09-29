@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Farm & hub map</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/orders.css">
+    <link rel="stylesheet" href="./assets/css/map.css">
+</head>
+<body data-page="map" data-wide>
+
+<main id="page">
+
+    <div class="map-shell">
+        <aside class="map-panel" id="mapPanel">
+            <div class="map-head">
+                <span class="eyebrow">Find fresh</span>
+                <h1>Farms &amp; <span class="hl">pickup hubs</span></h1>
+                <div class="pill-search" style="width:100%;margin-top:12px"><i class='bx bx-search'></i><input id="mapSearch" type="search" placeholder="Search farm, area or hub" aria-label="Search the map"></div>
+                <div class="seg" id="mapSeg" role="tablist">
+                    <button class="on" data-mode="all" role="tab">All</button>
+                    <button data-mode="farms" role="tab"><i class='bx bxs-leaf'></i> Farms</button>
+                    <button data-mode="hubs" role="tab"><i class='bx bx-store-alt'></i> Hubs</button>
+                </div>
+            </div>
+            <div class="map-list" id="mapList"></div>
+        </aside>
+        <section class="map-stage">
+            <div id="map" role="application" aria-label="Map of farms and pickup hubs"></div>
+            <div class="map-fallback" id="mapFallback" hidden><i class='bx bx-map-alt'></i><b>The map could not load</b><span>Check your connection. You can still browse the list and get directions.</span><button class="btn btn-primary btn-sm" onclick="location.reload()">Retry</button></div>
+            <div class="map-tools">
+                <button class="btn btn-soft" id="btnLocate"><i class='bx bx-current-location'></i> Near me</button>
+                <button class="btn btn-soft" id="btnReset"><i class='bx bx-reset'></i> Reset</button>
+                <button class="btn btn-soft show-list" id="btnList"><i class='bx bx-list-ul'></i> List</button>
+            </div>
+            <div class="map-legend"><span><i class="lg farm"></i> Farm</span><span><i class="lg hub"></i> Pickup hub</span><span><i class="lg me"></i> You</span></div>
+        </section>
+    </div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./assets/js/map.js"></script>
+</body>
+</html>

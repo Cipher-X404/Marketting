@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Your basket</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+</head>
+<body data-page="cart">
+
+<main id="page">
+
+    <div class="page-head reveal">
+        <div>
+            <span class="eyebrow">Step 1 of 2</span>
+            <h1>Your <span class="hl">basket</span></h1>
+            <p id="cartLead">Review what you have reserved before the harvest locks.</p>
+        </div>
+        <div><button class="btn btn-ghost" id="clearCart" hidden><i class='bx bx-trash'></i> Empty basket</button></div>
+    </div>
+    <div class="cart-layout" id="cartLayout">
+        <section class="cart-lines" id="lines" aria-label="Basket items"></section>
+        <aside class="receipt-wrap" id="summary"></aside>
+    </div>
+    <div id="suggest2"></div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/cart.js"></script>
+</body>
+</html>

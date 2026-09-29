@@ -1,0 +1,12 @@
+{
+  "name": "marketlink",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MarketLink: connecting farmers and buyers. Static front end for the landing page, farmers workspace and customer app.",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

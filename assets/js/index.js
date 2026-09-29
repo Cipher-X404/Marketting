@@ -78,3 +78,41 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeMobile();
     });
 });
+
+/* --------------------------------------------------------------------------
+   Hero background video: browsers sometimes ignore the `muted` attribute, and
+   autoplay can be blocked. Force-mute, start playback, retry on first touch.
+   Visitors who prefer reduced motion get the still poster instead.
+   -------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute('playsinline', '');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        video.removeAttribute('autoplay');
+        video.pause();
+        return;
+    }
+
+    const start = () => {
+        const p = video.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    start();
+
+    // Autoplay blocked (e.g. low-power mode): try again on the first interaction.
+    ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((evt) =>
+        window.addEventListener(evt, () => { if (video.paused) start(); }, { once: true, passive: true })
+    );
+
+    // Save battery: pause while the hero is off-screen.
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+            entries.forEach((e) => (e.isIntersecting ? start() : video.pause()));
+        }, { threshold: 0.05 }).observe(video);
+    }
+});

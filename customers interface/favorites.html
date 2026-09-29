@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Favorites</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/market.css">
+</head>
+<body data-page="favorites">
+
+<main id="page">
+
+    <div class="page-head reveal">
+        <div>
+            <span class="eyebrow">Your shelf</span>
+            <h1>Saved <span class="hl">favorites</span></h1>
+            <p>The crops and farms you keep coming back to, all in one place.</p>
+        </div>
+        <div class="fav-actions" id="favActions"></div>
+    </div>
+    <div class="tabs" id="favTabs" role="tablist">
+        <button class="tab-btn active" data-tab="products" role="tab">Produce <span class="n" id="nProducts">0</span></button>
+        <button class="tab-btn" data-tab="farms" role="tab">Farms <span class="n" id="nFarms">0</span></button>
+    </div>
+    <div id="favBody" style="margin-top:24px"></div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/favorites.js"></script>
+</body>
+</html>

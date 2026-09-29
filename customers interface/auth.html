@@ -3,136 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketLink — Customer Sign in</title>
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Sign in to the market</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/theme.css">
-    <link rel="stylesheet" href="./assets/css/customer.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
     <link rel="stylesheet" href="./assets/css/auth.css">
 </head>
-<body>
+<body data-page="auth">
 
-    <div class="cu-auth">
-        <!-- Editorial visual panel -->
-        <aside class="cu-auth-panel">
-            <img class="panel-img" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1400&q=80" alt="Fresh produce at a local market stall">
-            <div class="panel-scrim"></div>
-            <div class="panel-content">
-                <p class="panel-kicker"><i class="bx bx-store-alt"></i> The customer marketplace</p>
-                <h2>The market<br>comes to you.</h2>
-                <p class="panel-sub">Reserve harvests before they are cut. Collect same-day produce at a hub near you.</p>
+    <div class="auth">
+        <!-- ============ Visual side ============ -->
+        <aside class="auth-visual" aria-hidden="false">
+            <div class="awning-mini" aria-hidden="true"></div>
+            <a class="brand" href="../index.html" aria-label="MarketLink landing page">
+                <span class="brand-mark"><i class='bx bx-basket'></i></span>
+                <span class="brand-name">Market<em>Link</em></span>
+            </a>
 
-                <div class="panel-quote">
-                    <i class='bx bxs-quote-alt-left'></i>
-                    <p>I stopped buying week-old vegetables. My tomatoes were still on the vine yesterday morning.</p>
-                    <div class="quote-author">
-                        <img src="https://ui-avatars.com/api/?name=Adaeze+O&background=F59E0B&color=fff&bold=true" alt="Adaeze Okafor">
-                        <div>
-                            <strong>Adaeze Okafor</strong>
-                            <span>Home cook, Ikeja</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="arch">
+                <img src="../assets/images/products/veg-basket.jpg" alt="A market stall stacked with fresh produce" data-fb="Market">
+                <span class="float-tag t1"><i class='bx bx-sun'></i> Cut at dawn</span>
+                <span class="float-tag t2"><i class='bx bx-map-pin'></i> Collect near you</span>
+                <span class="float-tag t3"><i class='bx bxs-badge-check'></i> Farm-gate prices</span>
             </div>
+
+            <div class="auth-copy">
+                <h2>The market<br>comes to <span class="hl">you.</span></h2>
+                <p>Reserve harvests before they are cut, then collect same-day produce at a hub near you.</p>
+            </div>
+
+            <figure class="quote" id="quote">
+                <blockquote id="quoteText">I stopped buying week-old vegetables. My tomatoes were still on the vine yesterday morning.</blockquote>
+                <figcaption><span class="avatar" id="quoteAv">AO</span><span><b id="quoteName">Adaeze Okafor</b><small id="quoteRole">Home cook, Ikeja</small></span></figcaption>
+                <div class="dots" id="quoteDots"><button class="on" aria-label="Quote 1"></button><button aria-label="Quote 2"></button><button aria-label="Quote 3"></button></div>
+            </figure>
         </aside>
 
-        <!-- Form card -->
-        <main class="cu-auth-main">
-            <header class="cu-auth-top">
-                <a href="../index.html" class="cu-brand">
-                    <span class="cu-brand-mark"><i class="bx bx-basket"></i></span>
-                    <span class="cu-brand-name">Market<em>Link</em></span>
-                </a>
-                <button class="cu-icon-btn" data-theme-toggle aria-label="Toggle theme">
-                    <i class="bx bx-sun" data-theme-icon></i>
-                </button>
+        <!-- ============ Form side ============ -->
+        <main class="auth-main">
+            <header class="auth-top">
+                <a class="link" href="home.html"><i class='bx bx-arrow-back' style="transform:none"></i> Browse as guest</a>
+                <button class="icon-btn" data-theme-toggle aria-label="Toggle light and dark theme"><i class='bx bx-sun' id="themeIcon"></i></button>
             </header>
 
-            <div class="cu-auth-card">
+            <section class="auth-card" id="authCard">
                 <div class="auth-tabs" role="tablist">
-                    <button class="auth-tab active" id="tabSignin" role="tab" aria-selected="true">Sign in</button>
-                    <button class="auth-tab" id="tabSignup" role="tab" aria-selected="false">Create account</button>
-                    <span class="tab-ink" id="tabInk"></span>
+                    <button class="auth-tab active" id="tabIn" role="tab" aria-selected="true" aria-controls="authForm">Sign in</button>
+                    <button class="auth-tab" id="tabUp" role="tab" aria-selected="false" aria-controls="authForm">Create account</button>
+                    <span class="ink" id="ink"></span>
                 </div>
 
-                <h1 class="auth-title" id="authTitle">Welcome back to the market.</h1>
-                <p class="auth-sub" id="authSub">Sign in to see this week's harvests and your reservations.</p>
+                <h1 id="authTitle">Welcome back to the market.</h1>
+                <p class="sub" id="authSub">Sign in to see this week's harvests and your reservations.</p>
 
-                <form id="customerAuthForm" novalidate>
-                    <!-- Signup-only fields -->
-                    <div class="auth-field signup-only">
-                        <label for="fullName">Full name</label>
-                        <div class="input-wrap">
-                            <i class="bx bx-user"></i>
-                            <input type="text" id="fullName" placeholder="How should farmers greet you?">
-                        </div>
+                <div class="auth-alert" id="authAlert" hidden role="alert"></div>
+
+                <form id="authForm" novalidate>
+                    <label class="field su-only" data-field="name">
+                        <span>Full name</span>
+                        <div class="input-wrap"><i class='bx bx-user lead'></i><input class="input" id="name" name="name" type="text" autocomplete="name" placeholder="How should farmers greet you?"></div>
+                        <em class="err">Please tell us your name.</em>
+                    </label>
+                    <label class="field su-only" data-field="area">
+                        <span>Your neighbourhood</span>
+                        <div class="input-wrap"><i class='bx bx-map-pin lead'></i><input class="input" id="area" name="area" type="text" autocomplete="address-level2" placeholder="e.g. Yaba, Lagos. We match nearby hubs"></div>
+                        <em class="err">Add your area so we can suggest a hub.</em>
+                    </label>
+                    <label class="field" data-field="email">
+                        <span>Email address</span>
+                        <div class="input-wrap"><i class='bx bx-envelope lead'></i><input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+                        <em class="err">Enter a valid email address.</em>
+                    </label>
+                    <label class="field" data-field="password">
+                        <span>Password</span>
+                        <div class="input-wrap"><i class='bx bx-lock-alt lead'></i><input class="input" id="password" name="password" type="password" autocomplete="current-password" placeholder="At least 6 characters"><button type="button" class="eye" id="eye" aria-label="Show password"><i class='bx bx-show'></i></button></div>
+                        <div class="meter su-only" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><small id="meterText">Use 8+ characters with a number</small></div>
+                        <em class="err" id="pwErr">Password must be at least 6 characters.</em>
+                    </label>
+
+                    <div class="auth-row si-only">
+                        <label class="check"><input type="checkbox" id="remember" checked><span></span> Keep me signed in</label>
+                        <button type="button" class="link" id="forgot">Forgot password?</button>
                     </div>
+                    <label class="check su-only terms"><input type="checkbox" id="terms"><span></span> I agree to the <button type="button" class="link" data-legal="terms">Terms of Exchange</button> and <button type="button" class="link" data-legal="privacy">Privacy Policy</button></label>
 
-                    <div class="auth-field signup-only">
-                        <label for="area">Your neighborhood</label>
-                        <div class="input-wrap">
-                            <i class="bx bx-map-pin"></i>
-                            <input type="text" id="area" placeholder="e.g. Yaba, Lagos — we match nearby hubs">
-                        </div>
-                    </div>
-
-                    <!-- Shared fields -->
-                    <div class="auth-field">
-                        <label for="email">Email address</label>
-                        <div class="input-wrap">
-                            <i class="bx bx-envelope"></i>
-                            <input type="email" id="email" placeholder="you@example.com" required>
-                        </div>
-                    </div>
-
-                    <div class="auth-field">
-                        <label for="password">Password</label>
-                        <div class="input-wrap">
-                            <i class="bx bx-lock-alt"></i>
-                            <input type="password" id="password" placeholder="Your password" required>
-                            <button type="button" class="pwd-eye" id="pwdEye" aria-label="Show password"><i class="bx bx-show"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="auth-row signin-only">
-                        <label class="remember">
-                            <input type="checkbox" checked>
-                            <span>Keep me signed in</span>
-                        </label>
-                        <a href="#" class="forgot">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" class="cu-btn cu-btn-primary cu-btn-block" id="authSubmit">
-                        <span>Sign in</span>
-                        <i class="bx bx-right-arrow-alt"></i>
-                    </button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit"><span id="submitText">Sign in</span><i class='bx bx-right-arrow-alt go'></i></button>
                 </form>
 
-                <div class="auth-divider"><span>or continue with</span></div>
-
-                <div class="auth-socials">
-                    <button class="social-btn" type="button"><i class="bx bxl-google"></i> Google</button>
-                    <button class="social-btn" type="button"><i class="bx bxl-apple"></i> Apple</button>
+                <div class="divider"><span>or continue with</span></div>
+                <div class="socials">
+                    <button class="btn btn-ghost" type="button" data-social="Google"><i class='bx bxl-google'></i> Google</button>
+                    <button class="btn btn-ghost" type="button" data-social="Apple"><i class='bx bxl-apple'></i> Apple</button>
                 </div>
+                <button class="demo-link" type="button" id="demo"><i class='bx bx-bulb'></i> Just exploring? Fill in a demo account</button>
+            </section>
 
-                <p class="auth-legal">By continuing you accept the <a href="#">Terms of Exchange</a> and <a href="#">Privacy Policy</a>.</p>
-            </div>
-
-            <footer class="cu-auth-foot">
-                <a href="../farmers%20interface/auth.html" class="grower-link">
-                    <i class="bx bx-leaf"></i>
-                    Grow food instead? Open the farmer workspace
-                </a>
+            <footer class="auth-foot">
+                <a href="../farmers%20interface/auth.html"><i class='bx bx-leaf'></i> Grow food instead? Open the farmer workspace <i class='bx bx-right-arrow-alt'></i></a>
             </footer>
         </main>
     </div>
 
-    <script src="./assets/js/customer.js"></script>
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
     <script src="./assets/js/auth.js"></script>
 </body>
 </html>
