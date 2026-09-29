@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Farmer Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/profile.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION
+         ========================================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bx bx-basket"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Market<span class="brand-highlight">Link</span></span>
+                <span class="brand-tagline">eGreen Basket</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Sidebar">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+
+        <!-- Farmer Profile Section -->
+        <div class="farmer-profile-card">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Farmer Profile" class="farmer-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                <span class="status-indicator" title="Online"></span>
+            </div>
+            <div class="farmer-info">
+                <div class="farmer-name-container">
+                    <h4 class="farmer-name">Ibe Prosper</h4>
+                    <i class="bx bxs-badge-check verified-icon" title="Verified Farmer"></i>
+                </div>
+                <span class="farmer-badge">
+                    <i class="bx bx-leaf"></i> Farmer
+                </span>
+            </div>
+        </div>
+
+        <!-- Agricultural Visual Divider -->
+        <div class="sidebar-divider">
+            <span class="divider-line"></span>
+            <i class="bx bx-sprout divider-icon"></i>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link" data-page="dashboard" data-tooltip="Dashboard">
+                        <i class="bx bx-grid-alt nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link" data-page="products" data-tooltip="My Products">
+                        <i class="bx bx-package nav-icon"></i>
+                        <span class="nav-text">My Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="orders.html" class="nav-link" data-page="orders" data-tooltip="Orders">
+                        <i class="bx bx-receipt nav-icon"></i>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pickup.html" class="nav-link" data-page="pickup" data-tooltip="Pickup Slots">
+                        <i class="bx bx-calendar-event nav-icon"></i>
+                        <span class="nav-text">Pickup Slots</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sales.html" class="nav-link" data-page="sales" data-tooltip="Sales & Insights">
+                        <i class="bx bx-line-chart nav-icon"></i>
+                        <span class="nav-text">Sales & Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link" data-page="reviews" data-tooltip="Reviews">
+                        <i class="bx bx-star nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notifications.html" class="nav-link" data-page="notifications" data-tooltip="Notifications">
+                        <i class="bx bx-bell nav-icon"></i>
+                        <span class="nav-text">Notifications</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link" data-page="profile" data-tooltip="Profile">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-page="chatbot" data-tooltip="Chatbot">
+                        <i class="bx bx-bot nav-icon"></i>
+                        <span class="nav-text">Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link" data-page="settings" data-tooltip="Settings">
+                        <i class="bx bx-cog nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Decorative Banner -->
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">
+                <i class="bx bx-check-shield"></i>
+            </div>
+            <div class="footer-card-content">
+                <p class="footer-card-title">Verified Merchant</p>
+                <p class="footer-card-desc">eGreen Basket Certified</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT WRAPPER
+         ========================================= -->
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Top Header Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <!-- Mobile Drawer Toggle -->
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <!-- Desktop Sidebar Collapse Toggle -->
+                <button class="icon-btn desktop-collapse-btn" id="desktopCollapseBtn" aria-label="Toggle Sidebar">
+                    <i class="bx bx-chevron-left" id="collapseIcon"></i>
+                </button>
+
+                <!-- Search Input -->
+                <div class="search-box">
+                    <i class="bx bx-search search-icon"></i>
+                    <input type="text" placeholder="Search products, orders, buyers..." class="search-input">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Theme Mode Toggle -->
+                <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Toggle Light/Dark Mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <button class="icon-btn notification-btn" aria-label="Notifications" title="Notifications">
+                    <i class="bx bx-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Header Profile Pill -->
+                <div class="header-profile-dropdown" id="profileDropdown">
+                    <button class="profile-pill-btn" id="profileDropdownBtn">
+                        <img src="profile.jpg" alt="Farmer Profile" class="header-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                        <span class="header-farmer-name">Ibe Prosper</span>
+                        <i class="bx bx-chevron-down dropdown-arrow"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="bx bx-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="bx bx-slider-alt"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="auth.html" class="dropdown-item danger">
+                            <i class="bx bx-log-out"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+        <main class="profile-main-container">
+    <!-- Header/Cover Section -->
+    <header class="profile-header card-shadow">
+        <div class="cover-photo">
+            <!-- Using a placeholder gradient/image for the cover -->
+        </div>
+        <div class="profile-info-bar">
+            <div class="profile-avatar">
+                <img src="https://ui-avatars.com/api/?name=David+Clark&background=16A34A&color=fff&size=150" alt="Farmer Avatar">
+                <div class="avatar-badge"><i class='bx bxs-badge-check'></i></div>
+            </div>
+            <div class="profile-details">
+                <div class="title-row">
+                    <h1>Green Valley Farm <span class="badge badge-success"><i class='bx bxs-check-circle'></i> Verified Farmer</span></h1>
+                </div>
+                <p class="tagline">Fresh, local and naturally grown produce from our farm to your table.</p>
+                <div class="meta-info">
+                    <span><i class='bx bx-map'></i> Green Valley, Kaduna</span>
+                    <span><i class='bx bx-calendar'></i> Joined Apr 2025</span>
+                    <span><i class='bx bxs-star text-warning'></i> 4.8 (128 reviews)</span>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <a href="settings.html" class="btn btn-outline"><i class='bx bx-pencil'></i> Edit Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats-grid">
+        <div class="stat-card card-shadow hover-animate">
+            <div class="stat-icon icon-success"><i class='bx bx-leaf'></i></div>
+            <div class="stat-content">
+                <p class="stat-label">Total Products</p>
+                <h3 class="stat-value">12</h3>
+                <p class="stat-trend trend-up"><i class='bx bx-up-arrow-alt'></i> 2 this week</p>
+            </div>
+        </div>
+        <div class="stat-card card-shadow hover-animate">
+            <div class="stat-icon icon-warning"><i class='bx bx-cart'></i></div>
+            <div class="stat-content">
+                <p class="stat-label">Total Orders</p>
+                <h3 class="stat-value">28</h3>
+                <p class="stat-trend trend-up"><i class='bx bx-up-arrow-alt'></i> 12% this week</p>
+            </div>
+        </div>
+        <div class="stat-card card-shadow hover-animate">
+            <div class="stat-icon icon-info"><i class='bx bx-dollar-circle'></i></div>
+            <div class="stat-content">
+                <p class="stat-label">Total Sales</p>
+                <h3 class="stat-value">$1,248.50</h3>
+                <p class="stat-trend trend-up"><i class='bx bx-up-arrow-alt'></i> 18% this week</p>
+            </div>
+        </div>
+        <div class="stat-card card-shadow hover-animate">
+            <div class="stat-icon icon-purple"><i class='bx bx-star'></i></div>
+            <div class="stat-content">
+                <p class="stat-label">Average Rating</p>
+                <h3 class="stat-value">4.8</h3>
+                <div class="rating-stars">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    <span class="review-count">(128 reviews)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <div class="content-layout">
+        <!-- Left Column (Tabs & Activity) -->
+        <div class="main-column">
+            <!-- Tabs Navigation -->
+            <div class="tabs-container card-shadow">
+                <ul class="tabs-nav">
+                    <li><button class="tab-btn active" data-tab="personal-info">Personal Information</button></li>
+                    <li><button class="tab-btn" data-tab="farm-info">Farm Information</button></li>
+                    <li><button class="tab-btn" data-tab="bank-details">Bank Details</button></li>
+                    <li><button class="tab-btn" data-tab="preferences">Preferences</button></li>
+                </ul>
+
+                <!-- Tab Contents -->
+                <div class="tabs-content">
+                    
+                    <!-- 1. Personal Information Tab -->
+                    <div id="personal-info" class="tab-pane active">
+                        <div class="pane-header">
+                            <div>
+                                <h2><i class='bx bx-user'></i> Personal Information</h2>
+                                <p>Update your personal details and contact information.</p>
+                            </div>
+                            <a href="settings.html" class="btn btn-primary"><i class='bx bx-edit-alt'></i> Edit</a>
+                        </div>
+                        
+                        <div class="info-grid">
+                            <div class="details-list">
+                                <div class="detail-item">
+                                    <i class='bx bx-user-circle'></i>
+                                    <div>
+                                        <label>Full Name</label>
+                                        <p>David Clark</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class='bx bx-envelope'></i>
+                                    <div>
+                                        <label>Email Address</label>
+                                        <p>david@greenvalleyfarm.com</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class='bx bx-phone'></i>
+                                    <div>
+                                        <label>Phone Number</label>
+                                        <p>+234 801 234 5678</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class='bx bx-calendar'></i>
+                                    <div>
+                                        <label>Date of Birth</label>
+                                        <p>Jan 15, 1990</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class='bx bx-male-sign'></i>
+                                    <div>
+                                        <label>Gender</label>
+                                        <p>Male</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="extra-cards">
+                                <div class="status-card verified-card">
+                                    <div class="card-icon"><i class='bx bx-check-shield'></i></div>
+                                    <div>
+                                        <h4>Farmer Verified</h4>
+                                        <p>Your account has been verified. You can now list products, manage orders and receive payments.</p>
+                                    </div>
+                                </div>
+                                <div class="status-card bio-card">
+                                    <div class="card-icon"><i class='bx bx-id-card'></i></div>
+                                    <div>
+                                        <h4>Bio</h4>
+                                        <p>We are a family-owned farm dedicated to growing fresh, healthy and sustainable produce. Our goal is to provide quality food while supporting our local community.</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                                            <a href="#"><i class='bx bx-link'></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Farm Information Tab (Functional Placeholder) -->
+                    <div id="farm-info" class="tab-pane">
+                        <div class="pane-header">
+                            <div>
+                                <h2><i class='bx bx-landscape'></i> Farm Information</h2>
+                                <p>Manage your farm's operational details.</p>
+                            </div>
+                            <a href="settings.html" class="btn btn-primary"><i class='bx bx-edit-alt'></i> Edit</a>
+                        </div>
+                        <div class="placeholder-content">
+                            <i class='bx bx-store-alt'></i>
+                            <p>Farm specific details, licenses, and operating hours will appear here.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Bank Details Tab (Functional Placeholder) -->
+                    <div id="bank-details" class="tab-pane">
+                        <div class="pane-header">
+                            <div>
+                                <h2><i class='bx bx-credit-card'></i> Bank Details</h2>
+                                <p>Manage your payout methods and banking info.</p>
+                            </div>
+                            <a href="#add-bank" class="btn btn-primary"><i class='bx bx-plus'></i> Add Bank</a>
+                        </div>
+                        <div class="placeholder-content">
+                            <i class='bx bx-wallet'></i>
+                            <p>No banking information added yet. Add an account to receive payouts.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Preferences Tab (Functional Placeholder) -->
+                    <div id="preferences" class="tab-pane">
+                        <div class="pane-header">
+                            <div>
+                                <h2><i class='bx bx-cog'></i> Preferences</h2>
+                                <p>Customize your account settings and notifications.</p>
+                            </div>
+                            <a href="#save-prefs" class="btn btn-primary"><i class='bx bx-save'></i> Save</a>
+                        </div>
+                        <div class="placeholder-content">
+                            <i class='bx bx-slider'></i>
+                            <p>Notification settings, email alerts, and display preferences.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-card card-shadow">
+                <div class="card-header">
+                    <h2><i class='bx bx-time-five'></i> Recent Activity</h2>
+                    <a href="#all-activity" class="link-action">View All</a>
+                </div>
+                <p class="sub-header">Your latest actions and updates.</p>
+                
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <div class="activity-icon icon-primary"><i class='bx bx-package'></i></div>
+                        <div class="activity-details">
+                            <h4>New order received</h4>
+                            <p>Order #ORD-1042 - 2kg Tomatoes, 1kg Carrots</p>
+                        </div>
+                        <div class="activity-meta">
+                            <span class="time">Apr 28, 2025 • 10:24 AM</span>
+                            <span class="badge badge-success-light">Pending</span>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon icon-info"><i class='bx bx-refresh'></i></div>
+                        <div class="activity-details">
+                            <h4>Product updated</h4>
+                            <p>Fresh Tomatoes - Price changed to $4.00/kg</p>
+                        </div>
+                        <div class="activity-meta">
+                            <span class="time">Apr 27, 2025 • 03:15 PM</span>
+                            <span class="badge badge-info-light">Updated</span>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon icon-purple"><i class='bx bx-star'></i></div>
+                        <div class="activity-details">
+                            <h4>New review</h4>
+                            <p>You received a 5-star review from Sarah Johnson</p>
+                        </div>
+                        <div class="activity-meta">
+                            <span class="time">Apr 26, 2025 • 11:45 AM</span>
+                            <span class="badge badge-warning-light">5 Stars</span>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon icon-warning"><i class='bx bx-calendar-event'></i></div>
+                        <div class="activity-details">
+                            <h4>Pickup slot updated</h4>
+                            <p>New available slots for Apr 29 - May 3</p>
+                        </div>
+                        <div class="activity-meta">
+                            <span class="time">Apr 25, 2025 • 09:30 AM</span>
+                            <span class="badge badge-info-light">Updated</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column (Widgets) -->
+        <div class="side-column">
+            <!-- Farm Profile Widget -->
+            <div class="widget-card card-shadow hover-animate">
+                <div class="widget-header">
+                    <h3><i class='bx bx-store'></i> Farm Profile</h3>
+                    <a href="settings.html" class="btn btn-outline btn-sm">Edit</a>
+                </div>
+                <p class="widget-sub">Manage your farm details and location.</p>
+                <div class="farm-image-map">
+                    <!-- Placeholder for the landscape image map -->
+                </div>
+                <div class="farm-widget-details">
+                    <h4>Green Valley Farm <span class="badge badge-success btn-sm"><i class='bx bxs-check-circle'></i> Verified</span></h4>
+                    <p class="location-text"><i class='bx bx-map'></i> Kaduna, Nigeria</p>
+                    <p class="farm-desc">We grow a variety of fresh vegetables, fruits and herbs using sustainable farming practices.</p>
+                    <div class="farm-tags">
+                        <span><i class='bx bx-leaf text-primary'></i> Sustainable Farming</span>
+                        <span><i class='bx bx-map-pin text-primary'></i> Local Produce</span>
+                        <span><i class='bx bx-shield-check text-primary'></i> Quality Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Widget -->
+            <div class="widget-card card-shadow">
+                <div class="widget-header">
+                    <h3><i class='bx bx-bolt-circle'></i> Quick Actions</h3>
+                </div>
+                <div class="quick-actions-grid">
+                    <a href="add-product.html" class="action-btn hover-animate">
+                        <div class="action-icon"><i class='bx bx-plus-circle'></i></div>
+                        <div>
+                            <h5>Add New Product</h5>
+                            <p>List new farm produce</p>
+                        </div>
+                    </a>
+                    <a href="orders.html" class="action-btn hover-animate">
+                        <div class="action-icon"><i class='bx bx-box'></i></div>
+                        <div>
+                            <h5>Manage Orders</h5>
+                            <p>View & update orders</p>
+                        </div>
+                    </a>
+                    <a href="pickup.html" class="action-btn hover-animate">
+                        <div class="action-icon"><i class='bx bx-calendar-edit'></i></div>
+                        <div>
+                            <h5>Update Pickup Slots</h5>
+                            <p>Set available time slots</p>
+                        </div>
+                    </a>
+                    <a href="sales.html" class="action-btn hover-animate">
+                        <div class="action-icon"><i class='bx bx-line-chart'></i></div>
+                        <div>
+                            <h5>View Sales Report</h5>
+                            <p>Check your performance</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Promo Widget -->
+            <div class="promo-card hover-animate">
+                <div class="promo-content">
+                    <h3>Better Farms<br>Brighter Futures</h3>
+                    <p>Together we grow healthier communities.</p>
+                </div>
+                <div class="promo-icon">
+                    <i class='bx bx-spa'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+      
+    </div>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/profile.js"></script>
+</body>
+</html>
+

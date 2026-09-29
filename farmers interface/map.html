@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Farmer Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION
+         ========================================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bx bx-basket"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Market<span class="brand-highlight">Link</span></span>
+                <span class="brand-tagline">eGreen Basket</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Sidebar">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+
+        <!-- Farmer Profile Section -->
+        <div class="farmer-profile-card">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Farmer Profile" class="farmer-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                <span class="status-indicator" title="Online"></span>
+            </div>
+            <div class="farmer-info">
+                <div class="farmer-name-container">
+                    <h4 class="farmer-name">Ibe Prosper</h4>
+                    <i class="bx bxs-badge-check verified-icon" title="Verified Farmer"></i>
+                </div>
+                <span class="farmer-badge">
+                    <i class="bx bx-leaf"></i> Farmer
+                </span>
+            </div>
+        </div>
+
+        <!-- Agricultural Visual Divider -->
+        <div class="sidebar-divider">
+            <span class="divider-line"></span>
+            <i class="bx bx-sprout divider-icon"></i>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link" data-page="dashboard" data-tooltip="Dashboard">
+                        <i class="bx bx-grid-alt nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link" data-page="products" data-tooltip="My Products">
+                        <i class="bx bx-package nav-icon"></i>
+                        <span class="nav-text">My Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="orders.html" class="nav-link" data-page="orders" data-tooltip="Orders">
+                        <i class="bx bx-receipt nav-icon"></i>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pickup.html" class="nav-link" data-page="pickup" data-tooltip="Pickup Slots">
+                        <i class="bx bx-calendar-event nav-icon"></i>
+                        <span class="nav-text">Pickup Slots</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sales.html" class="nav-link" data-page="sales" data-tooltip="Sales & Insights">
+                        <i class="bx bx-line-chart nav-icon"></i>
+                        <span class="nav-text">Sales & Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link" data-page="reviews" data-tooltip="Reviews">
+                        <i class="bx bx-star nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notifications.html" class="nav-link" data-page="notifications" data-tooltip="Notifications">
+                        <i class="bx bx-bell nav-icon"></i>
+                        <span class="nav-text">Notifications</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link" data-page="profile" data-tooltip="Profile">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-page="chatbot" data-tooltip="Chatbot">
+                        <i class="bx bx-bot nav-icon"></i>
+                        <span class="nav-text">Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link" data-page="settings" data-tooltip="Settings">
+                        <i class="bx bx-cog nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Decorative Banner -->
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">
+                <i class="bx bx-check-shield"></i>
+            </div>
+            <div class="footer-card-content">
+                <p class="footer-card-title">Verified Merchant</p>
+                <p class="footer-card-desc">eGreen Basket Certified</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT WRAPPER
+         ========================================= -->
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Top Header Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <!-- Mobile Drawer Toggle -->
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <!-- Desktop Sidebar Collapse Toggle -->
+                <button class="icon-btn desktop-collapse-btn" id="desktopCollapseBtn" aria-label="Toggle Sidebar">
+                    <i class="bx bx-chevron-left" id="collapseIcon"></i>
+                </button>
+
+                <!-- Search Input -->
+                <div class="search-box">
+                    <i class="bx bx-search search-icon"></i>
+                    <input type="text" placeholder="Search products, orders, buyers..." class="search-input">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Theme Mode Toggle -->
+                <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Toggle Light/Dark Mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <button class="icon-btn notification-btn" aria-label="Notifications" title="Notifications">
+                    <i class="bx bx-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Header Profile Pill -->
+                <div class="header-profile-dropdown" id="profileDropdown">
+                    <button class="profile-pill-btn" id="profileDropdownBtn">
+                        <img src="profile.jpg" alt="Farmer Profile" class="header-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                        <span class="header-farmer-name">Ibe Prosper</span>
+                        <i class="bx bx-chevron-down dropdown-arrow"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="bx bx-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="bx bx-slider-alt"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="auth.html" class="dropdown-item danger">
+                            <i class="bx bx-log-out"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+      <!-- =========================================================
+     MARKETLINK - MAP & LOCATIONS MAIN CONTENT
+========================================================= -->
+<div class="ml-map-page">
+
+    <!-- Hero / Header Section -->
+    <header class="ml-map-hero">
+        <div class="ml-hero-content">
+            <div class="ml-hero-badge">
+                <i class='bx bx-map-alt'></i> MarketLink Explorer
+            </div>
+            <h1 class="ml-hero-title">Find Farmers & Markets</h1>
+            <p class="ml-hero-subtitle">
+                Discover local farmers and nearby markets. Get directions, check availability, and support fresh, local produce.
+            </p>
+        </div>
+        <div class="ml-hero-tags">
+            <span class="ml-tag"><i class='bx bx-leaf'></i> Local</span>
+            <span class="ml-tag"><i class='bx bx-badge-check'></i> Fresh</span>
+            <span class="ml-tag"><i class='bx bx-globe'></i> Sustainable</span>
+        </div>
+    </header>
+
+    <!-- Main Map & Directory Grid -->
+    <div class="ml-map-layout">
+
+        <!-- LEFT: Map Viewport Area -->
+        <div class="ml-map-container card">
+            
+            <!-- Floating Top Bar: Map / Satellite Switcher -->
+            <div class="ml-map-mode-switch">
+                <button type="button" class="ml-switch-btn active" id="ml-btn-map" data-layer="map">
+                    <i class='bx bx-map'></i> Map
+                </button>
+                <button type="button" class="ml-switch-btn" id="ml-btn-satellite" data-layer="satellite">
+                    <i class='bx bx-layer'></i> Satellite
+                </button>
+            </div>
+
+            <!-- Leaflet Map Container -->
+            <div id="ml-interactive-map" class="ml-map-viewport"></div>
+
+            <!-- Floating Legend -->
+            <div class="ml-map-legend">
+                <div class="ml-legend-item">
+                    <span class="ml-legend-dot farmer-dot"><i class='bx bx-leaf'></i></span>
+                    <span>Farmers</span>
+                </div>
+                <div class="ml-legend-item">
+                    <span class="ml-legend-dot market-dot"><i class='bx bx-store-alt'></i></span>
+                    <span>Markets</span>
+                </div>
+                <div class="ml-legend-item">
+                    <span class="ml-legend-dot user-dot"><i class='bx bx-target-lock'></i></span>
+                    <span>Your Location</span>
+                </div>
+            </div>
+
+            <!-- Floating Quick Directions Trigger -->
+            <button type="button" class="ml-map-directions-btn" id="ml-global-directions-btn">
+                <i class='bx bx-directions'></i> Get Directions
+            </button>
+        </div>
+
+        <!-- RIGHT: Filters & Location List Side Panel -->
+        <aside class="ml-map-sidebar card">
+            
+            <!-- Current Location Header -->
+            <div class="ml-location-bar">
+                <div class="ml-location-info">
+                    <i class='bx bx-map-pin ml-loc-icon'></i>
+                    <div>
+                        <span class="ml-loc-label">Your Location</span>
+                        <h4 class="ml-loc-name" id="ml-current-location-text">Kaduna, Nigeria</h4>
+                    </div>
+                </div>
+                <button type="button" class="ml-locate-btn" id="ml-locate-me-btn" title="Use My Current Location">
+                    <i class='bx bx-target-lock'></i>
+                </button>
+            </div>
+
+            <!-- Search Field -->
+            <div class="ml-search-box">
+                <i class='bx bx-search ml-search-icon'></i>
+                <input type="text" id="ml-search-input" placeholder="Search farmers, markets, categories..." autocomplete="off">
+            </div>
+
+            <!-- Type Filter Tabs -->
+            <div class="ml-filter-tabs">
+                <button type="button" class="ml-tab-btn active" data-filter="all">
+                    <i class='bx bx-grid-alt'></i> All
+                </button>
+                <button type="button" class="ml-tab-btn" data-filter="farmer">
+                    <i class='bx bx-leaf'></i> Farmers
+                </button>
+                <button type="button" class="ml-tab-btn" data-filter="market">
+                    <i class='bx bx-store-alt'></i> Markets
+                </button>
+            </div>
+
+            <!-- Distance Filter Selector -->
+            <div class="ml-distance-filter-row">
+                <label for="ml-distance-select" class="ml-distance-label">
+                    <i class='bx bx-slider-alt'></i> Within
+                </label>
+                <select id="ml-distance-select" class="ml-select-input">
+                    <option value="5">5 km</option>
+                    <option value="10" selected>10 km</option>
+                    <option value="20">20 km</option>
+                    <option value="50">50 km</option>
+                    <option value="all">All Distances</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Results Header -->
+            <div class="ml-results-header">
+                <h3>Nearby Farmers & Markets</h3>
+                <span class="ml-results-count" id="ml-results-count">0 found</span>
+            </div>
+
+            <!-- Scrollable Location Cards List -->
+            <div class="ml-location-list" id="ml-location-list">
+                <!-- Location cards will be dynamically injected here by dashboard.js -->
+            </div>
+
+            <!-- Info Banner Footer -->
+            <div class="ml-help-banner">
+                <i class='bx bx-info-circle ml-help-icon'></i>
+                <div>
+                    <h5>Need help finding a pickup point?</h5>
+                    <p>Select any location card to view details or generate live turn-by-turn directions.</p>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/map.js"></script>
+</body>
+</html>

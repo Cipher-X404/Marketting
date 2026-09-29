@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Farmer Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/settings.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION
+         ========================================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bx bx-basket"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Market<span class="brand-highlight">Link</span></span>
+                <span class="brand-tagline">eGreen Basket</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Sidebar">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+
+        <!-- Farmer Profile Section -->
+        <div class="farmer-profile-card">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Farmer Profile" class="farmer-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                <span class="status-indicator" title="Online"></span>
+            </div>
+            <div class="farmer-info">
+                <div class="farmer-name-container">
+                    <h4 class="farmer-name">Ibe Prosper</h4>
+                    <i class="bx bxs-badge-check verified-icon" title="Verified Farmer"></i>
+                </div>
+                <span class="farmer-badge">
+                    <i class="bx bx-leaf"></i> Farmer
+                </span>
+            </div>
+        </div>
+
+        <!-- Agricultural Visual Divider -->
+        <div class="sidebar-divider">
+            <span class="divider-line"></span>
+            <i class="bx bx-sprout divider-icon"></i>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link" data-page="dashboard" data-tooltip="Dashboard">
+                        <i class="bx bx-grid-alt nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link" data-page="products" data-tooltip="My Products">
+                        <i class="bx bx-package nav-icon"></i>
+                        <span class="nav-text">My Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="orders.html" class="nav-link" data-page="orders" data-tooltip="Orders">
+                        <i class="bx bx-receipt nav-icon"></i>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pickup.html" class="nav-link" data-page="pickup" data-tooltip="Pickup Slots">
+                        <i class="bx bx-calendar-event nav-icon"></i>
+                        <span class="nav-text">Pickup Slots</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sales.html" class="nav-link" data-page="sales" data-tooltip="Sales & Insights">
+                        <i class="bx bx-line-chart nav-icon"></i>
+                        <span class="nav-text">Sales & Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link" data-page="reviews" data-tooltip="Reviews">
+                        <i class="bx bx-star nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notifications.html" class="nav-link" data-page="notifications" data-tooltip="Notifications">
+                        <i class="bx bx-bell nav-icon"></i>
+                        <span class="nav-text">Notifications</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link" data-page="profile" data-tooltip="Profile">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-page="chatbot" data-tooltip="Chatbot">
+                        <i class="bx bx-bot nav-icon"></i>
+                        <span class="nav-text">Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link" data-page="settings" data-tooltip="Settings">
+                        <i class="bx bx-cog nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Decorative Banner -->
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">
+                <i class="bx bx-check-shield"></i>
+            </div>
+            <div class="footer-card-content">
+                <p class="footer-card-title">Verified Merchant</p>
+                <p class="footer-card-desc">eGreen Basket Certified</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT WRAPPER
+         ========================================= -->
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Top Header Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <!-- Mobile Drawer Toggle -->
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <!-- Desktop Sidebar Collapse Toggle -->
+                <button class="icon-btn desktop-collapse-btn" id="desktopCollapseBtn" aria-label="Toggle Sidebar">
+                    <i class="bx bx-chevron-left" id="collapseIcon"></i>
+                </button>
+
+                <!-- Search Input -->
+                <div class="search-box">
+                    <i class="bx bx-search search-icon"></i>
+                    <input type="text" placeholder="Search products, orders, buyers..." class="search-input">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Theme Mode Toggle -->
+                <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Toggle Light/Dark Mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <button class="icon-btn notification-btn" aria-label="Notifications" title="Notifications">
+                    <i class="bx bx-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Header Profile Pill -->
+                <div class="header-profile-dropdown" id="profileDropdown">
+                    <button class="profile-pill-btn" id="profileDropdownBtn">
+                        <img src="profile.jpg" alt="Farmer Profile" class="header-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                        <span class="header-farmer-name">Ibe Prosper</span>
+                        <i class="bx bx-chevron-down dropdown-arrow"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="bx bx-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="bx bx-slider-alt"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="auth.html" class="dropdown-item danger">
+                            <i class="bx bx-log-out"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+        
+      <main class="settings-main-content">
+    <!-- Header Area -->
+    <header class="settings-header">
+        <div class="header-text">
+            <div class="title-wrap">
+                <div class="icon-box"><i class='bx bx-cog'></i></div>
+                <h1>Settings</h1>
+            </div>
+            <p>Manage your account, preferences and keep your farm running smoothly.</p>
+        </div>
+        <div class="header-banner">
+            <span>Better Farming<br>Bigger Opportunities</span>
+        </div>
+    </header>
+
+    <!-- Main Grid Layout -->
+    <div class="settings-grid">
+        
+        <!-- LEFT COLUMN -->
+        <div class="grid-left">
+            
+            <!-- Account Information Card -->
+            <section class="card account-card">
+                <div class="card-header">
+                    <h2>Account Information</h2>
+                    <p>Update your personal and farm details.</p>
+                </div>
+                
+                <div class="account-layout">
+                    <!-- Tabs -->
+                    <aside class="account-tabs">
+                        <button class="tab-btn active" data-target="pane-profile">
+                            <span class="icon"><i class='bx bx-user'></i></span> Profile
+                        </button>
+                        <button class="tab-btn" data-target="pane-farm">
+                            <span class="icon"><i class='bx bx-store'></i></span> Farm Details
+                        </button>
+                        <button class="tab-btn" data-target="pane-contact">
+                            <span class="icon"><i class='bx bx-phone'></i></span> Contact Information
+                        </button>
+                        <!-- Location is an anchor tag as requested -->
+                        <a href="map.html" class="tab-link">
+                            <span class="icon"><i class='bx bx-map'></i></span> Location
+                        </a>
+                    </aside>
+
+                    <!-- Tab Content Panes -->
+                    <div class="account-content">
+                        <!-- Profile Pane (Active by default) -->
+                        <div id="pane-profile" class="tab-pane active">
+                            <div class="profile-header">
+                                <img src="https://via.placeholder.com/60" alt="David Clark" class="profile-img">
+                                <div class="profile-info">
+                                <h3>David Clark <span class="badge verified"><i class='bx bx-check'></i> Verified</span></h3>
+                                    <p><i class='bx bx-envelope'></i> david@greenvalleyfarm.com</p>
+                                    <p><i class='bx bx-phone'></i> +234 801 234 5678</p>
+                                    <p><i class='bx bx-map'></i> Kaduna, Nigeria</p>
+                                </div>
+                                <button class="btn-outline"><i class='bx bx-edit-alt'></i> Edit Profile</button>
+                            </div>
+
+                            <div class="farm-sub-info">
+                                <div class="sub-header">
+                                    <h4><i class='bx bx-leaf'></i> Farm Information</h4>
+                                    <button class="btn-text">Edit</button>
+                                </div>
+                                <p class="muted-text">Your farm details and business information.</p>
+                                
+                                <div class="farm-details-box">
+                                    <img src="https://via.placeholder.com/80x50" alt="Farm" class="farm-img">
+                                    <div class="farm-text">
+                                        <h5>Green Valley Farm <span class="badge verified"><i class='bx bx-check'></i> Verified</span></h5>
+                                        <p>Sustainable farming for a healthier tomorrow.</p>
+                                        <div class="farm-stats">
+                                            <span><i class='bx bx-cart'></i> 12 Products</span>
+                                            <span><i class='bx bx-calendar'></i> 3 Pickup Slots</span>
+                                            <span><i class='bx bx-star'></i> Since 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Farm Details Pane (Hidden by default) -->
+                        <div id="pane-farm" class="tab-pane">
+                            <h3>Farm Details</h3>
+                            <p class="muted-text">Manage specific agricultural data, crop types, and land size here.</p>
+                            <!-- Add your farm form/details here -->
+                            <div class="placeholder-box">Farm Details Content...</div>
+                        </div>
+
+                        <!-- Contact Information Pane (Hidden by default) -->
+                        <div id="pane-contact" class="tab-pane">
+                            <h3>Contact Information</h3>
+                            <p class="muted-text">Update your emergency contacts and alternate phone numbers.</p>
+                            <!-- Add your contact form/details here -->
+                            <div class="placeholder-box">Contact Information Content...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notification Preferences Card -->
+            <section class="card notifications-card">
+                <div class="card-header flex-between">
+                    <div>
+                        <h2><i class='bx bx-bell'></i> Notification Preferences</h2>
+                        <p>Choose what type of notifications you want to receive.</p>
+                    </div>
+                    <div class="global-toggle">
+                        <span class="muted-text">Email Notifications</span>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                </div>
+
+                <div class="toggle-list">
+                    <div class="toggle-item">
+                        <div>
+                            <h4>Order Updates</h4>
+                            <p>Get notified when you receive new orders or status changes.</p>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <div>
+                            <h4>Pickup Reminders</h4>
+                            <p>Receive reminders for your scheduled pickup slots.</p>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <div>
+                            <h4>Sales & Earnings</h4>
+                            <p>Get updates on your sales and earnings.</p>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <div>
+                            <h4>Reviews & Feedback</h4>
+                            <p>Know when you get new reviews or messages.</p>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <div>
+                            <h4>System Updates</h4>
+                            <p>Important updates about the platform.</p>
+                        </div>
+                        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="grid-right">
+            
+            <!-- Quick Actions -->
+            <section class="card quick-actions-card">
+                <h2><i class='bx bx-bolt-circle'></i> Quick Actions</h2>
+                <p class="muted-text">Get things done faster.</p>
+                <div class="action-grid">
+                    <button class="action-btn"><span class="icon"><i class='bx bx-clipboard'></i></span> Update Farm Details</button>
+                    <button class="action-btn"><span class="icon"><i class='bx bx-lock'></i></span> Change Password</button>
+                    <button class="action-btn"><span class="icon"><i class='bx bx-bell'></i></span> Manage Notifications</button>
+                    <button class="action-btn"><span class="icon"><i class='bx bx-headphone'></i></span> Help & Support</button>
+                </div>
+            </section>
+
+            <!-- Need Help Banner -->
+            <section class="card help-card">
+                <div class="help-content">
+                    <h2>Need Help?</h2>
+                    <p>Our support team is here to assist you with any issues or questions.</p>
+                    <button class="btn-primary"><i class='bx bx-message-square-dots'></i> Contact Support</button>
+                </div>
+            </section>
+
+            <!-- Security Settings (Triggers Modals) -->
+            <section class="card security-card">
+                <h2><i class='bx bx-shield-quarter'></i> Security Settings</h2>
+                <p class="muted-text">Keep your account safe and secure.</p>
+                
+                <div class="security-list">
+                    <div class="security-item" data-modal="change-password">
+                        <div class="sec-info">
+                            <h4>Change Password</h4>
+                            <p>Update your password regularly.</p>
+                        </div>
+                        <div class="sec-action"><i class='bx bx-chevron-right'></i></div>
+                    </div>
+                    
+                    <div class="security-item" data-modal="two-factor">
+                        <div class="sec-info">
+                            <h4>Two-Factor Authentication</h4>
+                            <p>Add an extra layer of security.</p>
+                        </div>
+                        <div class="sec-action"><span class="badge success">Enabled</span> <i class='bx bx-chevron-right'></i></div>
+                    </div>
+                    
+                    <div class="security-item" data-modal="sessions">
+                        <div class="sec-info">
+                            <h4>Sessions</h4>
+                            <p>Manage your active devices.</p>
+                        </div>
+                        <div class="sec-action"><i class='bx bx-chevron-right'></i></div>
+                    </div>
+                    
+                    <div class="security-item" data-modal="privacy">
+                        <div class="sec-info">
+                            <h4>Privacy Settings</h4>
+                            <p>Control your data and visibility.</p>
+                        </div>
+                        <div class="sec-action"><i class='bx bx-chevron-right'></i></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Modals for Security Settings -->
+    <div id="securityModal" class="modal-overlay">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3 id="modalTitle">Settings</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content injected via JS -->
+            </div>
+        </div>
+    </div>
+</main>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/settings.js"></script>
+</body>
+</html>

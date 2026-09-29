@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/checkout.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="c-navbar">
+        <a href="index.html" class="c-nav-brand">
+            <span class="c-nav-brand-icon"><i class='bx bx-basket'></i></span>
+            <span class="c-nav-brand-text">Market<em>Link</em></span>
+        </a>
+        <div class="c-nav-links">
+            <a href="browse.html" class="c-nav-link"><i class='bx bx-store'></i> <span>Browse</span></a>
+            <a href="orders.html" class="c-nav-link"><i class='bx bx-receipt'></i> <span>Orders</span></a>
+            <button class="c-nav-icon-btn" id="cThemeToggle"><i class='bx bx-sun'></i></button>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="c-container">
+        <div class="checkout-layout">
+
+            <!-- LEFT: Order Summary -->
+            <section class="checkout-summary">
+                <div class="checkout-heading">
+                    <a href="browse.html" class="back-link"><i class='bx bx-left-arrow-alt'></i></a>
+                    <h1>Checkout</h1>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Your basket</h3>
+                    <div id="checkoutItems" class="checkout-items">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="summary-row subtotal">
+                        <span>Subtotal</span>
+                        <strong id="subtotalAmount">&#8358;0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Pickup Fee</span>
+                        <span class="free-tag">Free</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <strong id="totalAmount">&#8358;0</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT: Checkout Form -->
+            <section class="checkout-form-section">
+                <form id="checkoutForm" onsubmit="return handleCheckout(event)">
+
+                    <div class="form-block">
+                        <h3><i class='bx bx-calendar-event'></i> Pickup Details</h3>
+                        <div class="input-group">
+                            <label for="pickupSlot">Pickup Slot</label>
+                            <div class="select-wrap">
+                                <select id="pickupSlot" required>
+                                    <option value="" disabled selected>Choose a pickup time and place</option>
+                                    <option>Saturday Morning Hub — Ikeja City Mall (May 02, 8AM–12PM)</option>
+                                    <option>Farm-gate Collection — Green Valley Farm, Epe (May 05, 4–6PM)</option>
+                                    <option>Lekki Farmers Market — Admiralty Way (May 10, 9–11AM)</option>
+                                </select>
+                                <i class='bx bx-chevron-down'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-block">
+                        <h3><i class='bx bx-user'></i> Contact Information</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="custName">Full Name</label>
+                                <input type="text" id="custName" placeholder="Adaeze Okonkwo" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="custPhone">Phone Number</label>
+                                <input type="tel" id="custPhone" placeholder="+234 801 234 5678" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-block">
+                        <h3><i class='bx bx-wallet'></i> Payment</h3>
+                        <div class="payment-options">
+                            <label class="payment-option selected">
+                                <input type="radio" name="payment" value="pickup" checked>
+                                <div class="payment-body">
+                                    <i class='bx bx-money'></i>
+                                    <div>
+                                        <strong>Pay on Pickup</strong>
+                                        <span>Cash or transfer at the hub</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="transfer">
+                                <div class="payment-body">
+                                    <i class='bx bx-transfer'></i>
+                                    <div>
+                                        <strong>Bank Transfer</strong>
+                                        <span>Pay now, details after order</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-block">
+                        <h3><i class='bx bx-note'></i> Order Notes (Optional)</h3>
+                        <textarea id="orderNotes" rows="3" placeholder="Any special requests? e.g. 'Extra ripe plantains please'"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-place-order" id="placeOrderBtn">
+                        <i class='bx bx-check-circle'></i> Place Order
+                    </button>
+
+                </form>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="cToast" class="c-toast"></div>
+
+    <!-- Mobile Tab Bar -->
+    <div class="c-tab-bar">
+        <a href="index.html" class="c-tab-item"><i class='bx bx-home'></i> Home</a>
+        <a href="browse.html" class="c-tab-item"><i class='bx bx-search'></i> Browse</a>
+        <a href="orders.html" class="c-tab-item"><i class='bx bx-receipt'></i> Orders</a>
+        <a href="account.html" class="c-tab-item"><i class='bx bx-user'></i> Account</a>
+    </div>
+
+    <script src="./assets/js/shell.js"></script>
+    <script>
+        // Populate checkout items from cart
+        function renderCheckout() {
+            const cart = JSON.parse(localStorage.getItem('ml_cart') || '[]');
+            const container = document.getElementById('checkoutItems');
+            const subtotalEl = document.getElementById('subtotalAmount');
+            const totalEl = document.getElementById('totalAmount');
+
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="checkout-empty"><i class='bx bx-basket'></i><p>Your basket is empty. <a href="browse.html">Browse produce</a></p></div>`;
+                document.getElementById('placeOrderBtn').disabled = true;
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const lineTotal = item.price * (item.qty || 1);
+                total += lineTotal;
+                return `
+                    <div class="checkout-item">
+                        <img src="${item.img}" alt="${item.name}">
+                        <div class="checkout-item-info">
+                            <h4>${item.name}</h4>
+                            <span>${item.unit} × ${item.qty || 1}</span>
+                        </div>
+                        <span class="checkout-item-price">₦${lineTotal.toLocaleString()}</span>
+                    </div>`;
+            }).join('');
+
+            subtotalEl.textContent = '₦' + total.toLocaleString();
+            totalEl.textContent = '₦' + total.toLocaleString();
+        }
+
+        renderCheckout();
+
+        // Payment option toggle
+        document.querySelectorAll('.payment-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+                opt.classList.add('selected');
+            });
+        });
+
+        // Handle checkout submission
+        function handleCheckout(e) {
+            e.preventDefault();
+            const btn = document.getElementById('placeOrderBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Processing...';
+
+            setTimeout(() => {
+                localStorage.removeItem('ml_cart');
+                window.showToast('Order placed successfully!');
+                btn.innerHTML = '<i class="bx bx-check-circle"></i> Order Confirmed!';
+                btn.style.background = 'var(--color-success)';
+
+                setTimeout(() => {
+                    window.location.href = 'orders.html';
+                }, 2000);
+            }, 1500);
+            return false;
+        }
+    </script>
+</body>
+</html>

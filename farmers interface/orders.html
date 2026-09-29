@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Farmer Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/orders.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION
+         ========================================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bx bx-basket"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Market<span class="brand-highlight">Link</span></span>
+                <span class="brand-tagline">eGreen Basket</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Sidebar">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+
+        <!-- Farmer Profile Section -->
+        <div class="farmer-profile-card">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Farmer Profile" class="farmer-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                <span class="status-indicator" title="Online"></span>
+            </div>
+            <div class="farmer-info">
+                <div class="farmer-name-container">
+                    <h4 class="farmer-name">Ibe Prosper</h4>
+                    <i class="bx bxs-badge-check verified-icon" title="Verified Farmer"></i>
+                </div>
+                <span class="farmer-badge">
+                    <i class="bx bx-leaf"></i> Farmer
+                </span>
+            </div>
+        </div>
+
+        <!-- Agricultural Visual Divider -->
+        <div class="sidebar-divider">
+            <span class="divider-line"></span>
+            <i class="bx bx-sprout divider-icon"></i>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link" data-page="dashboard" data-tooltip="Dashboard">
+                        <i class="bx bx-grid-alt nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link" data-page="products" data-tooltip="My Products">
+                        <i class="bx bx-package nav-icon"></i>
+                        <span class="nav-text">My Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="orders.html" class="nav-link" data-page="orders" data-tooltip="Orders">
+                        <i class="bx bx-receipt nav-icon"></i>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pickup.html" class="nav-link" data-page="pickup" data-tooltip="Pickup Slots">
+                        <i class="bx bx-calendar-event nav-icon"></i>
+                        <span class="nav-text">Pickup Slots</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sales.html" class="nav-link" data-page="sales" data-tooltip="Sales & Insights">
+                        <i class="bx bx-line-chart nav-icon"></i>
+                        <span class="nav-text">Sales & Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link" data-page="reviews" data-tooltip="Reviews">
+                        <i class="bx bx-star nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notifications.html" class="nav-link" data-page="notifications" data-tooltip="Notifications">
+                        <i class="bx bx-bell nav-icon"></i>
+                        <span class="nav-text">Notifications</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link" data-page="profile" data-tooltip="Profile">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-page="chatbot" data-tooltip="Chatbot">
+                        <i class="bx bx-bot nav-icon"></i>
+                        <span class="nav-text">Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link" data-page="settings" data-tooltip="Settings">
+                        <i class="bx bx-cog nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Decorative Banner -->
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">
+                <i class="bx bx-check-shield"></i>
+            </div>
+            <div class="footer-card-content">
+                <p class="footer-card-title">Verified Merchant</p>
+                <p class="footer-card-desc">eGreen Basket Certified</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT WRAPPER
+         ========================================= -->
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Top Header Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <!-- Mobile Drawer Toggle -->
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <!-- Desktop Sidebar Collapse Toggle -->
+                <button class="icon-btn desktop-collapse-btn" id="desktopCollapseBtn" aria-label="Toggle Sidebar">
+                    <i class="bx bx-chevron-left" id="collapseIcon"></i>
+                </button>
+
+                <!-- Search Input -->
+                <div class="search-box">
+                    <i class="bx bx-search search-icon"></i>
+                    <input type="text" placeholder="Search products, orders, buyers..." class="search-input">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Theme Mode Toggle -->
+                <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Toggle Light/Dark Mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <button class="icon-btn notification-btn" aria-label="Notifications" title="Notifications">
+                    <i class="bx bx-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Header Profile Pill -->
+                <div class="header-profile-dropdown" id="profileDropdown">
+                    <button class="profile-pill-btn" id="profileDropdownBtn">
+                        <img src="profile.jpg" alt="Farmer Profile" class="header-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                        <span class="header-farmer-name">Ibe Prosper</span>
+                        <i class="bx bx-chevron-down dropdown-arrow"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="bx bx-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="bx bx-slider-alt"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="auth.html" class="dropdown-item danger">
+                            <i class="bx bx-log-out"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+         <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <div class="header-title">
+                <div class="title-icon"><i class='bx bx-receipt'></i></div>
+                <div>
+                    <h1>Orders</h1>
+                    <p>Manage customer pre-orders and track pickup status.</p>
+                </div>
+            </div>
+            <div class="header-date">
+                <i class='bx bx-calendar'></i>
+                <span id="currentDateDisplay">Mon, Apr 28, 2025</span>
+            </div>
+        </header>
+
+        <!-- KPI Metrics Row -->
+        <section class="kpi-grid">
+            <div class="kpi-card" data-filter-status="All">
+                <div class="kpi-header">
+                    <div class="kpi-icon icon-cart"><i class='bx bx-shopping-bag'></i></div>
+                    <span class="kpi-title">Total Orders</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 id="kpiTotalOrders">28</h2>
+                    <span class="trend up"><i class='bx bx-trending-up'></i> 12% <small>vs. last week</small></span>
+                </div>
+            </div>
+
+            <div class="kpi-card" data-filter-status="Pending">
+                <div class="kpi-header">
+                    <div class="kpi-icon icon-pending"><i class='bx bx-time-five'></i></div>
+                    <span class="kpi-title">Pending</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 id="kpiPending">8</h2>
+                    <span class="trend up"><i class='bx bx-trending-up'></i> 8% <small>vs. last week</small></span>
+                </div>
+            </div>
+
+            <div class="kpi-card" data-filter-status="Accepted">
+                <div class="kpi-header">
+                    <div class="kpi-icon icon-accepted"><i class='bx bx-check-circle'></i></div>
+                    <span class="kpi-title">Accepted</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 id="kpiAccepted">14</h2>
+                    <span class="trend up"><i class='bx bx-trending-up'></i> 27% <small>vs. last week</small></span>
+                </div>
+            </div>
+
+            <div class="kpi-card" data-filter-status="Cancelled">
+                <div class="kpi-header">
+                    <div class="kpi-icon icon-cancelled"><i class='bx bx-x-circle'></i></div>
+                    <span class="kpi-title">Cancelled</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 id="kpiCancelled">3</h2>
+                    <span class="trend down"><i class='bx bx-trending-down'></i> 40% <small>vs. last week</small></span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon icon-revenue"><i class='bx bx-dollar-circle'></i></div>
+                    <span class="kpi-title">Total Revenue</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 id="kpiRevenue">$1,248.50</h2>
+                    <span class="trend up"><i class='bx bx-trending-up'></i> 18% <small>vs. last week</small></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Controls -->
+        <section class="filters-bar">
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+                <input type="text" id="searchInput" placeholder="Search by order ID, customer name or product...">
+            </div>
+            
+            <div class="filter-dropdown">
+                <select id="statusFilter">
+                    <option value="All">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <i class='bx bx-chevron-down select-arrow'></i>
+            </div>
+
+            <div class="filter-dropdown">
+                <select id="productFilter">
+                    <option value="All">All Products</option>
+                    <option value="Tomatoes">Tomatoes</option>
+                    <option value="Lettuce">Lettuce</option>
+                    <option value="Carrots">Carrots</option>
+                    <option value="Eggs">Eggs</option>
+                    <option value="Potatoes">Potatoes</option>
+                    <option value="Bananas">Bananas</option>
+                </select>
+                <i class='bx bx-chevron-down select-arrow'></i>
+            </div>
+
+            <div class="date-range-picker">
+                <i class='bx bx-calendar'></i>
+                <input type="text" id="dateRangeInput" value="Apr 1, 2025 - Apr 28, 2025" readonly>
+                <i class='bx bx-chevron-down select-arrow'></i>
+            </div>
+        </section>
+
+        <!-- Main Orders Grid Content -->
+        <main class="orders-main-layout">
+            <!-- Left Side: Table Area -->
+            <section class="orders-table-card">
+                <div class="table-header">
+                    <h3>Recent Orders</h3>
+                </div>
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Products</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Pickup Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Dynamic Table Rows Rendered via JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Pagination Footer -->
+                <div class="table-footer">
+                    <span id="paginationInfo">Showing 1 - 8 of 28 orders</span>
+                    <div class="pagination-controls">
+                        <button class="page-btn" id="prevPageBtn"><i class='bx bx-chevron-left'></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn" id="nextPageBtn"><i class='bx bx-chevron-right'></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Order Detail Panel -->
+            <aside class="order-detail-panel" id="orderDetailPanel">
+                <!-- Dynamically Rendered Order Details -->
+            </aside>
+        </main>
+    </div>
+      
+    </div>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/orders.js"></script>
+</body>
+</html>

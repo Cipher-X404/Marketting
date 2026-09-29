@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Farmer Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/pickup.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION
+         ========================================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bx bx-basket"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Market<span class="brand-highlight">Link</span></span>
+                <span class="brand-tagline">eGreen Basket</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Sidebar">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+
+        <!-- Farmer Profile Section -->
+        <div class="farmer-profile-card">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Farmer Profile" class="farmer-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                <span class="status-indicator" title="Online"></span>
+            </div>
+            <div class="farmer-info">
+                <div class="farmer-name-container">
+                    <h4 class="farmer-name">Ibe Prosper</h4>
+                    <i class="bx bxs-badge-check verified-icon" title="Verified Farmer"></i>
+                </div>
+                <span class="farmer-badge">
+                    <i class="bx bx-leaf"></i> Farmer
+                </span>
+            </div>
+        </div>
+
+        <!-- Agricultural Visual Divider -->
+        <div class="sidebar-divider">
+            <span class="divider-line"></span>
+            <i class="bx bx-sprout divider-icon"></i>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link" data-page="dashboard" data-tooltip="Dashboard">
+                        <i class="bx bx-grid-alt nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link" data-page="products" data-tooltip="My Products">
+                        <i class="bx bx-package nav-icon"></i>
+                        <span class="nav-text">My Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="orders.html" class="nav-link" data-page="orders" data-tooltip="Orders">
+                        <i class="bx bx-receipt nav-icon"></i>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pickup.html" class="nav-link" data-page="pickup" data-tooltip="Pickup Slots">
+                        <i class="bx bx-calendar-event nav-icon"></i>
+                        <span class="nav-text">Pickup Slots</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sales.html" class="nav-link" data-page="sales" data-tooltip="Sales & Insights">
+                        <i class="bx bx-line-chart nav-icon"></i>
+                        <span class="nav-text">Sales & Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link" data-page="reviews" data-tooltip="Reviews">
+                        <i class="bx bx-star nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notifications.html" class="nav-link" data-page="notifications" data-tooltip="Notifications">
+                        <i class="bx bx-bell nav-icon"></i>
+                        <span class="nav-text">Notifications</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link" data-page="profile" data-tooltip="Profile">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-page="chatbot" data-tooltip="Chatbot">
+                        <i class="bx bx-bot nav-icon"></i>
+                        <span class="nav-text">Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link" data-page="settings" data-tooltip="Settings">
+                        <i class="bx bx-cog nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Decorative Banner -->
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">
+                <i class="bx bx-check-shield"></i>
+            </div>
+            <div class="footer-card-content">
+                <p class="footer-card-title">Verified Merchant</p>
+                <p class="footer-card-desc">eGreen Basket Certified</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT WRAPPER
+         ========================================= -->
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Top Header Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <!-- Mobile Drawer Toggle -->
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <!-- Desktop Sidebar Collapse Toggle -->
+                <button class="icon-btn desktop-collapse-btn" id="desktopCollapseBtn" aria-label="Toggle Sidebar">
+                    <i class="bx bx-chevron-left" id="collapseIcon"></i>
+                </button>
+
+                <!-- Search Input -->
+                <div class="search-box">
+                    <i class="bx bx-search search-icon"></i>
+                    <input type="text" placeholder="Search products, orders, buyers..." class="search-input">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Theme Mode Toggle -->
+                <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Toggle Light/Dark Mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <button class="icon-btn notification-btn" aria-label="Notifications" title="Notifications">
+                    <i class="bx bx-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Header Profile Pill -->
+                <div class="header-profile-dropdown" id="profileDropdown">
+                    <button class="profile-pill-btn" id="profileDropdownBtn">
+                        <img src="profile.jpg" alt="Farmer Profile" class="header-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                        <span class="header-farmer-name">Ibe Prosper</span>
+                        <i class="bx bx-chevron-down dropdown-arrow"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="bx bx-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="bx bx-slider-alt"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="auth.html" class="dropdown-item danger">
+                            <i class="bx bx-log-out"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+        <main class="main-content" id="mainContent">
+            <div class="dashboard-container">
+                
+                <!-- Page Header -->
+                <header class="page-header fade-in-up delay-1">
+                    <div class="header-text">
+                        <div class="title-wrap">
+                            <div class="icon-box"><i class='bx bx-calendar-event'></i></div>
+                            <h1>Pickup Slots</h1>
+                        </div>
+                        <p>Schedule harvest collections and manage neighborhood pickup hubs.</p>
+                    </div>
+                    <button class="btn-primary"><i class='bx bx-plus'></i> Schedule New Slot</button>
+                </header>
+
+                <!-- Filters / Tabs -->
+                <div class="filters-bar fade-in-up delay-2">
+                    <div class="tabs">
+                        <button class="tab active" data-target="grid-upcoming">Upcoming (3)</button>
+                        <button class="tab" data-target="grid-completed">Completed</button>
+                        <button class="tab" data-target="grid-cancelled">Cancelled</button>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-outline"><i class='bx bx-filter'></i> Filter</button>
+                    </div>
+                </div>
+
+                <!-- UPCOMING SLOTS GRID -->
+                <div class="slots-grid fade-in-up delay-3 tab-content active" id="grid-upcoming">
+                    
+                    <!-- Slot Card 1 -->
+                    <div class="slot-card">
+                        <div class="slot-header">
+                            <div class="slot-date">
+                                <span class="month">MAY</span>
+                                <span class="day">02</span>
+                            </div>
+                            <div class="slot-title">
+                                <h3>Saturday Morning Hub</h3>
+                                <span class="badge status-open">Taking Orders</span>
+                            </div>
+                            <button class="icon-btn action-menu"><i class='bx bx-dots-vertical-rounded'></i></button>
+                        </div>
+                        
+                        <div class="slot-body">
+                            <div class="info-row">
+                                <i class='bx bx-time'></i>
+                                <span>08:00 AM - 12:00 PM</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-map'></i>
+                                <span>Ikeja City Mall (Parking Lot B)</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-package'></i>
+                                <span><strong>24</strong> orders secured (Approx. 150kg)</span>
+                            </div>
+                        </div>
+
+                        <div class="slot-footer">
+                            <div class="revenue-estimate">
+                                <span>Est. Revenue</span>
+                                <strong>&#8358;84,500</strong>
+                            </div>
+                            <button class="btn-text open-manifest" data-title="Saturday Morning Hub" data-date="May 02, 2026">View Manifest <i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Slot Card 2 -->
+                    <div class="slot-card">
+                        <div class="slot-header">
+                            <div class="slot-date">
+                                <span class="month">MAY</span>
+                                <span class="day">05</span>
+                            </div>
+                            <div class="slot-title">
+                                <h3>Farm-gate Collection</h3>
+                                <span class="badge status-open">Taking Orders</span>
+                            </div>
+                            <button class="icon-btn action-menu"><i class='bx bx-dots-vertical-rounded'></i></button>
+                        </div>
+                        
+                        <div class="slot-body">
+                            <div class="info-row">
+                                <i class='bx bx-time'></i>
+                                <span>04:00 PM - 06:00 PM</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-map'></i>
+                                <span>Green Valley Farm, Epe</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-package'></i>
+                                <span><strong>8</strong> orders secured (Approx. 45kg)</span>
+                            </div>
+                        </div>
+
+                        <div class="slot-footer">
+                            <div class="revenue-estimate">
+                                <span>Est. Revenue</span>
+                                <strong>&#8358;22,000</strong>
+                            </div>
+                            <button class="btn-text open-manifest" data-title="Farm-gate Collection" data-date="May 05, 2026">View Manifest <i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Slot Card 3 (Closed) -->
+                    <div class="slot-card disabled">
+                        <div class="slot-header">
+                            <div class="slot-date">
+                                <span class="month">MAY</span>
+                                <span class="day">10</span>
+                            </div>
+                            <div class="slot-title">
+                                <h3>Lekki Phase 1 Delivery Hub</h3>
+                                <span class="badge status-closed">Full / Closed</span>
+                            </div>
+                            <button class="icon-btn action-menu"><i class='bx bx-dots-vertical-rounded'></i></button>
+                        </div>
+                        
+                        <div class="slot-body">
+                            <div class="info-row">
+                                <i class='bx bx-time'></i>
+                                <span>09:00 AM - 11:00 AM</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-map'></i>
+                                <span>Lekki Farmers Market, Admiralty</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-package'></i>
+                                <span><strong>40</strong> orders secured (Max Capacity)</span>
+                            </div>
+                        </div>
+
+                        <div class="slot-footer">
+                            <div class="revenue-estimate">
+                                <span>Est. Revenue</span>
+                                <strong>&#8358;145,000</strong>
+                            </div>
+                            <button class="btn-text open-manifest" data-title="Lekki Phase 1 Delivery Hub" data-date="May 10, 2026">View Manifest <i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLETED SLOTS GRID -->
+                <div class="slots-grid tab-content" id="grid-completed" style="display: none;">
+                    <div class="slot-card disabled">
+                        <div class="slot-header">
+                            <div class="slot-date">
+                                <span class="month">APR</span>
+                                <span class="day">28</span>
+                            </div>
+                            <div class="slot-title">
+                                <h3>Victoria Island Hub</h3>
+                                <span class="badge" style="background:#e5e7eb; color:#374151">Completed</span>
+                            </div>
+                        </div>
+                        <div class="slot-body">
+                            <div class="info-row">
+                                <i class='bx bx-check-circle'></i>
+                                <span>35 orders successfully fulfilled</span>
+                            </div>
+                            <div class="info-row">
+                                <i class='bx bx-money'></i>
+                                <span>Total Payout: &#8358;112,000</span>
+                            </div>
+                        </div>
+                        <div class="slot-footer">
+                            <button class="btn-text">View Summary <i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CANCELLED SLOTS GRID -->
+                <div class="slots-grid tab-content" id="grid-cancelled" style="display: none;">
+                    <div class="empty-state">
+                        <i class='bx bx-calendar-x'></i>
+                        <p>No cancelled slots</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manifest Modal -->
+            <div id="manifestModal" class="modal-overlay" style="display: none;">
+                <div class="manifest-card">
+                    <div class="manifest-header">
+                        <div>
+                            <h2 id="manifestTitle">Pickup Manifest</h2>
+                            <p id="manifestDate" class="muted-text">Loading...</p>
+                        </div>
+                        <button class="icon-btn close-manifest"><i class='bx bx-x'></i></button>
+                    </div>
+                    <div class="manifest-body">
+                        <div class="manifest-section">
+                            <h3>Harvest Summary (To Pack)</h3>
+                            <ul class="harvest-list">
+                                <li><span>Ugu (Fluted Pumpkin) Leaves</span> <strong>50 bunches</strong></li>
+                                <li><span>Waterleaf</span> <strong>20 bunches</strong></li>
+                                <li><span>Sweet Potatoes</span> <strong>40 kg</strong></li>
+                                <li><span>Fresh Tomatoes</span> <strong>15 baskets</strong></li>
+                            </ul>
+                        </div>
+                        <div class="manifest-section">
+                            <h3>Customer List</h3>
+                            <div class="customer-list">
+                                <div class="customer-row">
+                                    <div class="cust-info">
+                                        <strong>Sarah O.</strong>
+                                        <span>ORD-#4092</span>
+                                    </div>
+                                    <span class="cust-items">3 items</span>
+                                </div>
+                                <div class="customer-row">
+                                    <div class="cust-info">
+                                        <strong>Chukwudi M.</strong>
+                                        <span>ORD-#4095</span>
+                                    </div>
+                                    <span class="cust-items">1 item (20kg Potatoes)</span>
+                                </div>
+                                <div class="customer-row">
+                                    <div class="cust-info">
+                                        <strong>Aisha B.</strong>
+                                        <span>ORD-#4102</span>
+                                    </div>
+                                    <span class="cust-items">5 items</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="manifest-footer">
+                        <button class="btn-outline close-manifest">Close</button>
+                        <button class="btn-primary"><i class='bx bx-printer'></i> Print Manifest</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/pickup.js"></script>
+</body>
+</html>

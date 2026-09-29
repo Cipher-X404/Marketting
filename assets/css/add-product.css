@@ -1,0 +1,195 @@
+@import "./theme.css";
+
+/* Centered Form Styles for Add Product */
+.add-product-centered-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-section-centered {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group-c {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group-c label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+}
+
+.input-group-c input[type="text"],
+.input-group-c input[type="number"],
+.input-group-c input[type="url"],
+.input-group-c textarea,
+.input-group-c select {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group-c input:focus,
+.input-group-c textarea:focus,
+.input-group-c select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.input-group-c textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.input-row-c {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .input-row-c {
+        grid-template-columns: 1fr;
+    }
+}
+
+.select-wrapper-c {
+    position: relative;
+}
+
+.select-wrapper-c select {
+    width: 100%;
+    padding: 14px 40px 14px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select-wrapper-c select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.select-wrapper-c i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    font-size: 1.2rem;
+}
+
+/* Image Upload */
+.image-upload-area-c {
+    width: 100%;
+    height: 120px;
+    border: 2px dashed var(--color-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.image-upload-area-c:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(22, 163, 74, 0.03);
+}
+
+.upload-placeholder-c {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.upload-placeholder-c i {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+}
+
+.upload-placeholder-c span {
+    font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.form-actions-c {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-bottom: 40px;
+}
+
+.btn-outline-c {
+    padding: 14px 28px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-outline-c:hover {
+    background: var(--color-bg);
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
+}
+
+.btn-primary-c {
+    padding: 14px 28px;
+    background: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary-c:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+}

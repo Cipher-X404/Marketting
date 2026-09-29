@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Farmer Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/sales.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION
+         ========================================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bx bx-basket"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Market<span class="brand-highlight">Link</span></span>
+                <span class="brand-tagline">eGreen Basket</span>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Sidebar">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+
+        <!-- Farmer Profile Section -->
+        <div class="farmer-profile-card">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Farmer Profile" class="farmer-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                <span class="status-indicator" title="Online"></span>
+            </div>
+            <div class="farmer-info">
+                <div class="farmer-name-container">
+                    <h4 class="farmer-name">Ibe Prosper</h4>
+                    <i class="bx bxs-badge-check verified-icon" title="Verified Farmer"></i>
+                </div>
+                <span class="farmer-badge">
+                    <i class="bx bx-leaf"></i> Farmer
+                </span>
+            </div>
+        </div>
+
+        <!-- Agricultural Visual Divider -->
+        <div class="sidebar-divider">
+            <span class="divider-line"></span>
+            <i class="bx bx-sprout divider-icon"></i>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link" data-page="dashboard" data-tooltip="Dashboard">
+                        <i class="bx bx-grid-alt nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link" data-page="products" data-tooltip="My Products">
+                        <i class="bx bx-package nav-icon"></i>
+                        <span class="nav-text">My Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="orders.html" class="nav-link" data-page="orders" data-tooltip="Orders">
+                        <i class="bx bx-receipt nav-icon"></i>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pickup.html" class="nav-link" data-page="pickup" data-tooltip="Pickup Slots">
+                        <i class="bx bx-calendar-event nav-icon"></i>
+                        <span class="nav-text">Pickup Slots</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sales.html" class="nav-link" data-page="sales" data-tooltip="Sales & Insights">
+                        <i class="bx bx-line-chart nav-icon"></i>
+                        <span class="nav-text">Sales & Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link" data-page="reviews" data-tooltip="Reviews">
+                        <i class="bx bx-star nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notifications.html" class="nav-link" data-page="notifications" data-tooltip="Notifications">
+                        <i class="bx bx-bell nav-icon"></i>
+                        <span class="nav-text">Notifications</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link" data-page="profile" data-tooltip="Profile">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-page="chatbot" data-tooltip="Chatbot">
+                        <i class="bx bx-bot nav-icon"></i>
+                        <span class="nav-text">Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link" data-page="settings" data-tooltip="Settings">
+                        <i class="bx bx-cog nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Decorative Banner -->
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">
+                <i class="bx bx-check-shield"></i>
+            </div>
+            <div class="footer-card-content">
+                <p class="footer-card-title">Verified Merchant</p>
+                <p class="footer-card-desc">eGreen Basket Certified</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT WRAPPER
+         ========================================= -->
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Top Header Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <!-- Mobile Drawer Toggle -->
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <!-- Desktop Sidebar Collapse Toggle -->
+                <button class="icon-btn desktop-collapse-btn" id="desktopCollapseBtn" aria-label="Toggle Sidebar">
+                    <i class="bx bx-chevron-left" id="collapseIcon"></i>
+                </button>
+
+                <!-- Search Input -->
+                <div class="search-box">
+                    <i class="bx bx-search search-icon"></i>
+                    <input type="text" placeholder="Search products, orders, buyers..." class="search-input">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Theme Mode Toggle -->
+                <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Toggle Light/Dark Mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <button class="icon-btn notification-btn" aria-label="Notifications" title="Notifications">
+                    <i class="bx bx-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Header Profile Pill -->
+                <div class="header-profile-dropdown" id="profileDropdown">
+                    <button class="profile-pill-btn" id="profileDropdownBtn">
+                        <img src="profile.jpg" alt="Farmer Profile" class="header-avatar" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ibe+Prosper&background=16A34A&color=fff&bold=true';">
+                        <span class="header-farmer-name">Ibe Prosper</span>
+                        <i class="bx bx-chevron-down dropdown-arrow"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="bx bx-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="bx bx-slider-alt"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="auth.html" class="dropdown-item danger">
+                            <i class="bx bx-log-out"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+         <div class="dashboard-container">
+  <!-- Dashboard Header -->
+  <div class="dash-header">
+    <div class="dash-title">
+      <div class="title-icon">
+        <i class='bx bx-line-chart'></i>
+      </div>
+      <div>
+        <h2>Sales & Insights</h2>
+        <p>Track your performance, understand your customers, and grow your farm.</p>
+      </div>
+    </div>
+    <div class="dash-actions">
+      <div class="date-filter" id="dateFilterBtn">
+        <i class='bx bx-calendar'></i>
+        <span id="dateRangeText">Apr 21, 2026 - Apr 27, 2026</span>
+        <i class='bx bx-chevron-down'></i>
+        <!-- Dropdown for date filter -->
+        <div class="date-dropdown" id="dateDropdown">
+          <ul>
+            <li onclick="updateDate('Today')">Today</li>
+            <li onclick="updateDate('Last 7 Days')">Last 7 Days</li>
+            <li onclick="updateDate('This Month')">This Month</li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn-download" id="downloadReportBtn">
+        <i class='bx bx-download'></i> Download Report
+      </button>
+    </div>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <!-- Card 1 -->
+    <div class="kpi-card">
+      <div class="kpi-top">
+        <div class="kpi-icon icon-success"><i class='bx bx-leaf'></i></div>
+        <div class="kpi-info">
+          <p>Total Sales</p>
+          <h3>$1,248.50</h3>
+          <span class="trend up"><i class='bx bx-up-arrow-alt'></i> 18% <small>vs. previous week</small></span>
+        </div>
+      </div>
+      <div class="kpi-chart"><canvas id="sparklineSales"></canvas></div>
+    </div>
+    <!-- Card 2 -->
+    <div class="kpi-card">
+      <div class="kpi-top">
+        <div class="kpi-icon icon-warning"><i class='bx bx-cart'></i></div>
+        <div class="kpi-info">
+          <p>Total Orders</p>
+          <h3>28</h3>
+          <span class="trend up"><i class='bx bx-up-arrow-alt'></i> 12% <small>vs. previous week</small></span>
+        </div>
+      </div>
+      <div class="kpi-chart"><canvas id="sparklineOrders"></canvas></div>
+    </div>
+    <!-- Card 3 -->
+    <div class="kpi-card">
+      <div class="kpi-top">
+        <div class="kpi-icon icon-info"><i class='bx bx-cube-alt'></i></div>
+        <div class="kpi-info">
+          <p>Average Order Value</p>
+          <h3>$44.59</h3>
+          <span class="trend up"><i class='bx bx-up-arrow-alt'></i> 6% <small>vs. previous week</small></span>
+        </div>
+      </div>
+      <div class="kpi-chart"><canvas id="sparklineAOV"></canvas></div>
+    </div>
+    <!-- Card 4 -->
+    <div class="kpi-card">
+      <div class="kpi-top">
+        <div class="kpi-icon icon-purple"><i class='bx bx-user'></i></div>
+        <div class="kpi-info">
+          <p>Unique Customers</p>
+          <h3>21</h3>
+          <span class="trend up"><i class='bx bx-up-arrow-alt'></i> 31% <small>vs. previous week</small></span>
+        </div>
+      </div>
+      <div class="kpi-chart"><canvas id="sparklineCustomers"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Middle Section: Main Charts -->
+  <div class="main-charts-grid">
+    <!-- Sales Overview -->
+    <div class="card col-span-2">
+      <div class="card-header">
+        <div class="card-title">
+          <i class='bx bx-bar-chart-alt-2'></i>
+          <div>
+            <h4>Sales Overview</h4>
+            <p>Your total sales and order trends for the selected period.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sales-overview-content">
+        <div class="chart-container-large">
+          <canvas id="salesOverviewChart"></canvas>
+        </div>
+        <div class="sales-overview-stats">
+          <div class="stat-box">
+            <div class="stat-icon icon-success"><i class='bx bx-dollar'></i></div>
+            <div>
+              <p>Total Sales</p>
+              <h4>$1,248.50</h4>
+              <span class="trend up"><i class='bx bx-up-arrow-alt'></i> 18%</span>
+            </div>
+          </div>
+          <div class="stat-box mt-3">
+            <div class="stat-icon icon-warning"><i class='bx bx-cart'></i></div>
+            <div>
+              <p>Total Orders</p>
+              <h4>28</h4>
+              <span class="trend up"><i class='bx bx-up-arrow-alt'></i> 12%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales by Category -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <i class='bx bx-pie-chart-alt'></i>
+          <div>
+            <h4>Sales by Category</h4>
+            <p>Which products sell the most?</p>
+          </div>
+        </div>
+      </div>
+      <div class="category-content">
+        <div class="doughnut-container">
+          <canvas id="categoryChart"></canvas>
+          <div class="doughnut-inner-text">
+            <h3>$1,248.50</h3>
+            <p>Total Sales</p>
+          </div>
+        </div>
+        <ul class="category-legend" id="categoryLegend">
+          <!-- Populated by JS -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom-grid">
+    <!-- Top Selling Products -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <i class='bx bx-medal'></i>
+          <div>
+            <h4>Top Selling Products</h4>
+            <p>Your best performing products this week.</p>
+          </div>
+        </div>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Units Sold</th>
+            <th>Revenue</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=50&q=80" alt="Tomatoes">
+                <div>
+                  <strong>Fresh Tomatoes</strong>
+                  <span>Vegetables</span>
+                </div>
+              </div>
+            </td>
+            <td>42</td>
+            <td>$84.00</td>
+            <td class="trend up"><i class='bx bx-up-arrow-alt'></i> 22%</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=50&q=80" alt="Lettuce">
+                <div>
+                  <strong>Organic Lettuce</strong>
+                  <span>Leafy Greens</span>
+                </div>
+              </div>
+            </td>
+            <td>28</td>
+            <td>$56.00</td>
+            <td class="trend up"><i class='bx bx-up-arrow-alt'></i> 18%</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=50&q=80" alt="Carrots">
+                <div>
+                  <strong>Carrots</strong>
+                  <span>Root Vegetables</span>
+                </div>
+              </div>
+            </td>
+            <td>24</td>
+            <td>$48.00</td>
+            <td class="trend up"><i class='bx bx-up-arrow-alt'></i> 12%</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=50&q=80" alt="Eggs">
+                <div>
+                  <strong>Fresh Eggs (Dozen)</strong>
+                  <span>Dairy & Eggs</span>
+                </div>
+              </div>
+            </td>
+            <td>18</td>
+            <td>$72.00</td>
+            <td class="trend up"><i class='bx bx-up-arrow-alt'></i> 8%</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-cell">
+                <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=50&q=80" alt="Pepper">
+                <div>
+                  <strong>Green Pepper</strong>
+                  <span>Vegetables</span>
+                </div>
+              </div>
+            </td>
+            <td>16</td>
+            <td>$32.00</td>
+            <td class="trend up"><i class='bx bx-up-arrow-alt'></i> 15%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Middle Column: Performance & Promo -->
+    <div class="col-flex">
+      <div class="card flex-grow">
+        <div class="card-header">
+          <div class="card-title">
+            <i class='bx bx-target-lock'></i>
+            <div>
+              <h4>Sales Performance</h4>
+              <p>Compare your performance with the previous period.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-container-medium">
+          <canvas id="performanceChart"></canvas>
+        </div>
+      </div>
+      
+      <!-- Promo Banner -->
+      <div class="promo-banner card">
+        <div class="promo-content">
+          <div>
+            <p class="promo-sub">GROW YOUR FARM</p>
+            <h3>More orders. More customers.</h3>
+            <p class="promo-desc">Keep your stock updated and make the most of your market presence.</p>
+            <button class="btn-primary"><i class='bx bx-plus'></i> Add New Product</button>
+          </div>
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=150&q=80" alt="Basket of veggies">
+        </div>
+        <div class="promo-features">
+          <div class="feat-item"><i class='bx bx-cart-add'></i> <span>Get More Orders</span></div>
+          <div class="feat-item"><i class='bx bx-trending-up'></i> <span>Track Growth</span></div>
+          <div class="feat-item"><i class='bx bx-box'></i> <span>Improve Inventory</span></div>
+          <div class="feat-item"><i class='bx bx-group'></i> <span>Build Community</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Recent Orders & Insights -->
+    <div class="col-flex">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <i class='bx bx-time-five'></i>
+            <div>
+              <h4>Recent Orders</h4>
+            </div>
+          </div>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        <table class="data-table orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#ORD-1042</td>
+              <td>Sarah Johnson</td>
+              <td>$28.50</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+            </tr>
+            <tr>
+              <td>#ORD-1041</td>
+              <td>Michael Brown</td>
+              <td>$22.00</td>
+              <td><span class="badge badge-success">Accepted</span></td>
+            </tr>
+            <tr>
+              <td>#ORD-1040</td>
+              <td>Emily Davis</td>
+              <td>$16.75</td>
+              <td><span class="badge badge-primary">Completed</span></td>
+            </tr>
+            <tr>
+              <td>#ORD-1039</td>
+              <td>James Wilson</td>
+              <td>$24.50</td>
+              <td><span class="badge badge-success">Accepted</span></td>
+            </tr>
+            <tr>
+              <td>#ORD-1038</td>
+              <td>Linda Martinez</td>
+              <td>$12.00</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card flex-grow insight-card">
+        <div class="card-header">
+          <div class="card-title">
+            <i class='bx bx-bulb'></i>
+            <div>
+              <h4>Sales Insights</h4>
+            </div>
+          </div>
+          <a href="#" class="view-all">View Details</a>
+        </div>
+        <ul class="insights-list">
+          <li>
+            <div class="icon-circle success-light"><i class='bx bx-check-shield'></i></div>
+            <div>
+              <p><strong>Tomatoes</strong> are your top seller this week</p>
+              <span>42 units sold • 34% of total sales</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon-circle info-light"><i class='bx bx-line-chart-down'></i></div>
+            <div>
+              <p>Sales increased by <strong>18%</strong></p>
+              <span>compared to last week</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon-circle info-light"><i class='bx bx-info-circle'></i></div>
+            <div>
+              <p>Consider adding more leafy greens</p>
+              <span>High demand in your area</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/sales.js"></script>
+</body>
+</html>

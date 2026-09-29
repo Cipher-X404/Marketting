@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - MarketLink</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/orders.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="c-navbar">
+        <a href="index.html" class="c-nav-brand">
+            <span class="c-nav-brand-icon"><i class='bx bx-basket'></i></span>
+            <span class="c-nav-brand-text">Market<em>Link</em></span>
+        </a>
+        <div class="c-nav-links">
+            <a href="browse.html" class="c-nav-link"><i class='bx bx-store'></i> <span>Browse</span></a>
+            <a href="orders.html" class="c-nav-link active"><i class='bx bx-receipt'></i> <span>Orders</span></a>
+            <button class="c-nav-icon-btn c-open-cart">
+                <div class="c-nav-cart">
+                    <i class='bx bx-cart'></i>
+                    <span class="c-cart-count">0</span>
+                </div>
+            </button>
+            <a href="account.html"><img src="https://ui-avatars.com/api/?name=Adaeze+Okonkwo&background=16A34A&color=fff" alt="Profile" class="c-nav-avatar"></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="c-container" style="padding-top: 32px;">
+        <div class="page-header">
+            <h1>My Orders</h1>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="active">Active</button>
+            <button class="tab-btn" data-tab="completed">Completed</button>
+            <button class="tab-btn" data-tab="all">All</button>
+        </div>
+
+        <!-- Orders Container -->
+        <div class="orders-container">
+            <!-- Active Orders -->
+            <div class="order-list" id="tab-active">
+                <!-- Order Card 1 -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-id">
+                            <span class="label">Order</span>
+                            <span class="value">ORD-#4092</span>
+                        </div>
+                        <div class="order-date">Placed: Oct 12, 2026</div>
+                        <div class="order-status badge-active">Ready for Pickup</div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-items">
+                            <div class="item">
+                                <span class="qty">2x</span>
+                                <span class="name">Organic Tomatoes</span>
+                            </div>
+                            <div class="item">
+                                <span class="qty">1x</span>
+                                <span class="name">Fresh Basil</span>
+                            </div>
+                            <div class="item">
+                                <span class="qty">5x</span>
+                                <span class="name">Sweet Potatoes</span>
+                            </div>
+                        </div>
+                        <div class="order-summary">
+                            <div class="pickup-info">
+                                <i class='bx bx-map'></i>
+                                <span>Pickup: Green Valley Farm, Oct 14</span>
+                            </div>
+                            <div class="total-amount">₦ 8,500</div>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <button class="btn-track">Track Order</button>
+                    </div>
+                </div>
+
+                <!-- Order Card 2 -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-id">
+                            <span class="label">Order</span>
+                            <span class="value">ORD-#4098</span>
+                        </div>
+                        <div class="order-date">Placed: Oct 14, 2026</div>
+                        <div class="order-status badge-pending">Confirmed</div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-items">
+                            <div class="item">
+                                <span class="qty">1x</span>
+                                <span class="name">Cassava Tubers (Bag)</span>
+                            </div>
+                        </div>
+                        <div class="order-summary">
+                            <div class="pickup-info">
+                                <i class='bx bx-map'></i>
+                                <span>Pickup: Sunrise Market, Oct 16</span>
+                            </div>
+                            <div class="total-amount">₦ 12,000</div>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <button class="btn-track">Track Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Orders -->
+            <div class="order-list hidden" id="tab-completed">
+                <!-- Order Card 3 -->
+                <div class="order-card completed">
+                    <div class="order-header">
+                        <div class="order-id">
+                            <span class="label">Order</span>
+                            <span class="value">ORD-#3850</span>
+                        </div>
+                        <div class="order-date">Placed: Sep 28, 2026</div>
+                        <div class="order-status badge-completed">Completed</div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-items">
+                            <div class="item">
+                                <span class="qty">1x</span>
+                                <span class="name">Plantains (Bunch)</span>
+                            </div>
+                            <div class="item">
+                                <span class="qty">3x</span>
+                                <span class="name">Avocados</span>
+                            </div>
+                        </div>
+                        <div class="order-summary">
+                            <div class="pickup-info">
+                                <i class='bx bx-check-circle'></i>
+                                <span>Picked up: Oct 1, 2026</span>
+                            </div>
+                            <div class="total-amount">₦ 4,200</div>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <button class="btn-secondary">Reorder</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Orders -->
+            <div class="order-list hidden" id="tab-all">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Empty State (Hidden by default) -->
+            <div class="empty-state hidden" id="empty-state">
+                <i class='bx bx-package'></i>
+                <h3>No orders yet</h3>
+                <p>You haven't placed any orders in this category.</p>
+                <a href="browse.html" class="c-btn-primary">Start Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- CART DRAWER -->
+    <div class="c-cart-overlay"></div>
+    <div class="c-cart-drawer">
+        <div class="c-cart-header">
+            <h2>Your Basket</h2>
+            <button class="c-nav-icon-btn c-close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="c-cart-body"></div>
+        <div class="c-cart-footer">
+            <div class="c-cart-total">
+                <span>Total</span>
+                <strong>&#8358;0</strong>
+            </div>
+            <button class="c-btn-checkout" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="c-tab-bar">
+        <a href="index.html" class="c-tab-item"><i class='bx bx-home'></i> Home</a>
+        <a href="browse.html" class="c-tab-item"><i class='bx bx-search'></i> Browse</a>
+        <a href="orders.html" class="c-tab-item active"><i class='bx bx-receipt'></i> Orders</a>
+        <a href="account.html" class="c-tab-item"><i class='bx bx-user'></i> Account</a>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="c-toast" id="cToast"></div>
+
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/orders.js"></script>
+</body>
+</html>

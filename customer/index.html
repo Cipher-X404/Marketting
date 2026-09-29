@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink - Fresh from the Farm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="c-navbar">
+        <a href="index.html" class="c-nav-brand">
+            <span class="c-nav-brand-icon"><i class='bx bx-basket'></i></span>
+            <span class="c-nav-brand-text">Market<em>Link</em></span>
+        </a>
+        <div class="c-nav-search">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search for fresh produce...">
+        </div>
+        <div class="c-nav-links">
+            <a href="browse.html" class="c-nav-link"><i class='bx bx-store'></i> <span>Browse</span></a>
+            <a href="orders.html" class="c-nav-link"><i class='bx bx-receipt'></i> <span>Orders</span></a>
+            <button class="c-nav-icon-btn c-open-cart">
+                <div class="c-nav-cart">
+                    <i class='bx bx-cart'></i>
+                    <span class="c-cart-count">0</span>
+                </div>
+            </button>
+            <a href="account.html"><img src="https://ui-avatars.com/api/?name=Adaeze+Okonkwo&background=16A34A&color=fff" alt="Profile" class="c-nav-avatar"></a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="h-hero">
+        <div class="c-container h-hero-inner">
+            <div class="h-hero-content">
+                <h1>Harvest-fresh produce from farms near you.</h1>
+                <p>Reserve fresh vegetables, fruits, and tubers directly from local farmers before they even leave the ground.</p>
+                <div class="h-hero-actions">
+                    <a href="browse.html" class="c-btn-primary">Shop the Market</a>
+                    <a href="#how-it-works" class="c-btn-outline">How it works</a>
+                </div>
+                
+                <div class="h-hero-stats">
+                    <div class="stat"><strong>40+</strong> Local Farms</div>
+                    <div class="stat"><strong>Same-day</strong> Harvest</div>
+                </div>
+            </div>
+            <div class="h-hero-image">
+                <img src="https://images.unsplash.com/photo-1596199050105-6d5d32222916?w=800&q=80" alt="Fresh Nigerian Market Produce">
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY RAIL -->
+    <section class="c-section bg-surface">
+        <div class="c-container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-rail">
+                <a href="browse.html" class="cat-card">
+                    <div class="cat-img"><img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=300&q=80" alt="Leafy Greens"></div>
+                    <h3>Leafy Greens</h3>
+                </a>
+                <a href="browse.html" class="cat-card">
+                    <div class="cat-img"><img src="https://images.unsplash.com/photo-1596910547037-846b1980329f?w=300&q=80" alt="Roots & Tubers"></div>
+                    <h3>Roots & Tubers</h3>
+                </a>
+                <a href="browse.html" class="cat-card">
+                    <div class="cat-img"><img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=300&q=80" alt="Fresh Fruits"></div>
+                    <h3>Fresh Fruits</h3>
+                </a>
+                <a href="browse.html" class="cat-card">
+                    <div class="cat-img"><img src="https://images.unsplash.com/photo-1586201375761-83865001e8ac?w=300&q=80" alt="Grains & Beans"></div>
+                    <h3>Grains & Beans</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED FARMS -->
+    <section class="c-section">
+        <div class="c-container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Local Farms</h2>
+                <a href="browse.html" class="view-all">View all <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+            
+            <div class="farms-grid">
+                <div class="farm-card">
+                    <div class="farm-cover"></div>
+                    <div class="farm-body">
+                        <div class="farm-avatar"><i class='bx bx-leaf'></i></div>
+                        <h3>Green Valley Farm</h3>
+                        <p class="farm-loc"><i class='bx bx-map'></i> Epe, Lagos</p>
+                        <div class="farm-meta">
+                            <span><i class='bx bxs-star'></i> 4.9</span>
+                            <span>12 active listings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="farm-cover" style="background: #FEF3C7;"></div>
+                    <div class="farm-body">
+                        <div class="farm-avatar" style="color:#D97706; background:#FEF3C7"><i class='bx bx-sun'></i></div>
+                        <h3>Sunrise Market</h3>
+                        <p class="farm-loc"><i class='bx bx-map'></i> Ikorodu, Lagos</p>
+                        <div class="farm-meta">
+                            <span><i class='bx bxs-star'></i> 4.8</span>
+                            <span>8 active listings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="farm-cover" style="background: #DBEAFE;"></div>
+                    <div class="farm-body">
+                        <div class="farm-avatar" style="color:#2563EB; background:#DBEAFE"><i class='bx bx-water'></i></div>
+                        <h3>Ogun River Harvest</h3>
+                        <p class="farm-loc"><i class='bx bx-map'></i> Abeokuta, Ogun</p>
+                        <div class="farm-meta">
+                            <span><i class='bx bxs-star'></i> 4.9</span>
+                            <span>15 active listings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="c-section bg-surface border-top">
+        <div class="c-container text-center">
+            <h2 class="section-title text-center">How MarketLink Works</h2>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon"><i class='bx bx-search-alt'></i></div>
+                    <h3>1. Browse & Reserve</h3>
+                    <p>Find fresh produce from local farmers and reserve your batch before harvest.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class='bx bx-basket'></i></div>
+                    <h3>2. Farmer Harvests</h3>
+                    <p>Your order is picked fresh from the ground specifically for you.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class='bx bx-store'></i></div>
+                    <h3>3. Pick up at Hub</h3>
+                    <p>Collect your fresh produce at a nearby community hub or farm-gate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="c-footer">
+        <div class="c-container text-center">
+            <div class="c-nav-brand" style="justify-content: center; margin-bottom: 16px;">
+                <span class="c-nav-brand-icon"><i class='bx bx-basket'></i></span>
+                <span class="c-nav-brand-text">Market<em>Link</em></span>
+            </div>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">Connecting communities to fresh, local food.</p>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="c-cart-overlay"></div>
+    <div class="c-cart-drawer">
+        <div class="c-cart-header">
+            <h2>Your Basket</h2>
+            <button class="c-nav-icon-btn c-close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="c-cart-body"></div>
+        <div class="c-cart-footer">
+            <div class="c-cart-total">
+                <span>Total</span>
+                <strong>&#8358;0</strong>
+            </div>
+            <button class="c-btn-checkout" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="c-tab-bar">
+        <a href="index.html" class="c-tab-item active"><i class='bx bx-home'></i> Home</a>
+        <a href="browse.html" class="c-tab-item"><i class='bx bx-search'></i> Browse</a>
+        <a href="orders.html" class="c-tab-item"><i class='bx bx-receipt'></i> Orders</a>
+        <a href="account.html" class="c-tab-item"><i class='bx bx-user'></i> Account</a>
+    </div>
+
+    <div class="c-toast" id="cToast"></div>
+
+    <script src="./assets/js/shell.js"></script>
+</body>
+</html>

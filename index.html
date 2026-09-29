@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink: eGreen Basket | Direct Farm to Consumer Platform</title>
+    <meta name="description" content="MarketLink connects local farmers directly with households and food buyers. Farmers set their prices and harvest to order. Buyers get fresh food with verified origin.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MarketLink: Direct Farm to Consumer Platform">
+    <meta property="og:description" content="Connecting local growers and buyers directly for fresher harvests and fair prices.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: DM Serif Display (headings) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Boxicons (MarketLink Standard Icons) -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+
+    <!-- ======================================================================
+         HEADER
+         ====================================================================== -->
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <a href="index.html" class="brand" aria-label="MarketLink Homepage">
+                <span class="brand-mark">
+                    <i class="bx bx-basket"></i>
+                </span>
+                <span class="brand-name">Market<em>Link</em></span>
+            </a>
+
+            <nav aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#how" class="nav-item">How it works</a></li>
+                    <li><a href="#why" class="nav-item">Why direct</a></li>
+                    <li><a href="#harvest" class="nav-item">This week</a></li>
+                    <li><a href="#join" class="nav-item">Join</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="theme-btn" id="themeToggleBtn" aria-label="Toggle dark mode">
+                    <i class="bx bx-sun" id="themeIcon"></i>
+                </button>
+                <a href="farmers%20interface/auth.html" class="header-link-signin">Sign in</a>
+                <a href="#join" class="header-link-start">Get started</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                <i class="bx bx-menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-inner">
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+                <i class="bx bx-x"></i>
+            </button>
+            <ul class="mobile-nav-list">
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#why">Why direct</a></li>
+                <li><a href="#harvest">This week</a></li>
+                <li><a href="#join">Join</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <a href="farmers%20interface/auth.html" class="mobile-signin">Sign in</a>
+                <a href="#join" class="mobile-start">Get started</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         HERO — Full-bleed image, left-aligned text, no overlay gradient wash
+         ====================================================================== -->
+    <section class="hero" aria-label="Hero">
+        <div class="hero-bg">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80">
+                <source src="./assets/videos/hero.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-lead">eGreen Basket</p>
+                <h1>Your food grows<br>until you buy it.</h1>
+                <p class="hero-sub">
+                    MarketLink pairs local farms with nearby households.
+                    Farmers list crops before harvest. Buyers reserve and collect
+                    at designated pickup spots. No middlemen, no markup, no waste.
+                </p>
+                <div class="hero-actions">
+                    <a href="#harvest" class="btn-primary">
+                        <i class="bx bx-shopping-bag"></i>
+                        Browse this week's harvest
+                    </a>
+                    <a href="#how" class="btn-ghost">How it works</a>
+                </div>
+            </div>
+
+            <div class="hero-proof">
+                <div class="proof-item">
+                    <span class="proof-num">0%</span>
+                    <span class="proof-label">broker cut</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-num">same-day</span>
+                    <span class="proof-label">harvest to pickup</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-num">verified</span>
+                    <span class="proof-label">farm origin</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         HOW IT WORKS — Unified journey
+         ====================================================================== -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <h2>The journey of a harvest</h2>
+            <p class="section-intro">
+                From the soil to your table, MarketLink connects growers directly with buyers in one seamless process.
+            </p>
+
+            <div class="journey-grid">
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="bx bx-seedling"></i></div>
+                    <h3>1. Plan & Publish</h3>
+                    <p>Farmers list their upcoming crops, setting clear harvest dates and fair farm-gate prices before they even start cutting.</p>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="bx bx-cart-add"></i></div>
+                    <h3>2. Reserve in Advance</h3>
+                    <p>Households and kitchens browse local farms, reserving their exact needs. The farmer secures a guaranteed sale.</p>
+                </div>
+
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="bx bx-sun"></i></div>
+                    <h3>3. Same-Day Harvest</h3>
+                    <p>Crops stay in the ground until the day of pickup. Farmers harvest exactly what was ordered—meaning zero food waste.</p>
+                </div>
+
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="bx bx-shopping-bag"></i></div>
+                    <h3>4. Collect & Enjoy</h3>
+                    <p>Buyers collect their fresh produce at designated neighborhood hubs, paying a fraction of retail prices while farmers earn more.</p>
+                </div>
+            </div>
+            
+            <div class="journey-actions">
+                <a href="farmers%20interface/auth.html" class="btn-primary">Start selling</a>
+                <a href="farmers%20interface/map.html" class="btn-ghost" style="color: var(--color-primary); border-color: var(--color-primary);">Start buying</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         WHY DIRECT — Three tight points, no decorative icon boxes
+         ====================================================================== -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="why-header">
+                <h2>What changes when<br>you cut the chain</h2>
+                <p>
+                    Food typically passes through three to five
+                    intermediaries before your plate. Each one adds cost,
+                    time, and spoilage. Here's the difference when you don't.
+                </p>
+            </div>
+
+            <div class="why-grid">
+                <article class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Freshness you can taste</h3>
+                    <p>
+                        Regular market vegetables spend days in hot transit
+                        lorries. MarketLink produce is harvested on the day
+                        of your pickup. That's flavour and nutrition a cold
+                        chain can't match.
+                    </p>
+                </article>
+
+                <article class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Honest pricing both ways</h3>
+                    <p>
+                        Middlemen absorb 40 to 60 percent of produce margins.
+                        Farmers earn more, buyers pay less, and neither party
+                        subsidises a distribution chain they never asked for.
+                    </p>
+                </article>
+
+                <article class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Harvest only what sells</h3>
+                    <p>
+                        Pre-orders let growers harvest to demand.
+                        Every crate has a confirmed buyer, so nothing
+                        rots at the roadside waiting for a truck that
+                        might not come.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         HARVEST PREVIEW — Produce tiles, staggered layout
+         ====================================================================== -->
+    <section class="harvest-section" id="harvest">
+        <div class="container">
+            <div class="harvest-header">
+                <div>
+                    <h2>Available for pickup this week</h2>
+                    <p>Listed crops currently taking pre-orders from local farms.</p>
+                </div>
+                <a href="farmers%20interface/map.html" class="harvest-browse">
+                    View all farms
+                    <i class="bx bx-map"></i>
+                </a>
+            </div>
+
+            <div class="produce-tiles">
+                <!-- Tile 1 -->
+                <a href="farmers%20interface/map.html" class="produce-tile">
+                    <div class="tile-img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                            alt="Fresh Scotch Bonnet pepper"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80';"
+                        >
+                        <span class="tile-day">Friday</span>
+                    </div>
+                    <div class="tile-info">
+                        <h4>Scotch Bonnet (Rodo)</h4>
+                        <span class="tile-farm">
+                            <i class="bx bx-map-pin"></i> Green Valley Farm, Epe
+                        </span>
+                        <div class="tile-price">
+                            <span class="tile-amount">&#8358;3,500</span>
+                            <span class="tile-unit">per medium basket</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tile 2 -->
+                <a href="farmers%20interface/map.html" class="produce-tile">
+                    <div class="tile-img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80"
+                            alt="Fluted Pumpkin Leaves"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80';"
+                        >
+                        <span class="tile-day">Saturday</span>
+                    </div>
+                    <div class="tile-info">
+                        <h4>Pumpkin Leaves (Ugwu)</h4>
+                        <span class="tile-farm">
+                            <i class="bx bx-map-pin"></i> Ibe Organic Crops, Ogun
+                        </span>
+                        <div class="tile-price">
+                            <span class="tile-amount">&#8358;1,200</span>
+                            <span class="tile-unit">per bundle</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tile 3 -->
+                <a href="farmers%20interface/map.html" class="produce-tile">
+                    <div class="tile-img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1592417817098-8f3d69104a47?auto=format&fit=crop&w=600&q=80"
+                            alt="Plum Tomatoes"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80';"
+                        >
+                        <span class="tile-day">Saturday</span>
+                    </div>
+                    <div class="tile-info">
+                        <h4>Plum Tomatoes (Vine-Ripened)</h4>
+                        <span class="tile-farm">
+                            <i class="bx bx-map-pin"></i> Plateau Harvest Co-op, Jos
+                        </span>
+                        <div class="tile-price">
+                            <span class="tile-amount">&#8358;4,800</span>
+                            <span class="tile-unit">per crate</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tile 4 -->
+                <a href="farmers%20interface/map.html" class="produce-tile">
+                    <div class="tile-img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80"
+                            alt="Orange Flesh Sweet Potatoes"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80';"
+                        >
+                        <span class="tile-day">Monday</span>
+                    </div>
+                    <div class="tile-info">
+                        <h4>Sweet Potatoes (Orange Flesh)</h4>
+                        <span class="tile-farm">
+                            <i class="bx bx-map-pin"></i> Sunrise Agro Farms, Oyo
+                        </span>
+                        <div class="tile-price">
+                            <span class="tile-amount">&#8358;2,800</span>
+                            <span class="tile-unit">per 5kg bag</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         JOIN — Role selection, clean split
+         ====================================================================== -->
+    <section class="join-section" id="join">
+        <div class="container">
+            <h2>Choose how you use MarketLink</h2>
+            <p class="section-intro">
+                Sign in to your workspace. You can switch roles anytime in settings.
+            </p>
+
+            <div class="join-grid">
+                <div class="join-card join-farmer">
+                    <div class="join-card-top">
+                        <i class="bx bx-leaf"></i>
+                        <h3>Farmer workspace</h3>
+                        <p>For growers, farms, and agricultural co-ops</p>
+                    </div>
+                    <ul class="join-perks">
+                        <li><i class="bx bx-check"></i> List produce with harvest schedules</li>
+                        <li><i class="bx bx-check"></i> Receive secured pre-orders</li>
+                        <li><i class="bx bx-check"></i> Manage pickup hubs and time slots</li>
+                        <li><i class="bx bx-check"></i> Track revenue and payouts</li>
+                    </ul>
+                    <a href="farmers%20interface/auth.html" class="join-btn join-btn-farmer">
+                        Continue as a farmer
+                    </a>
+                </div>
+
+                <div class="join-card join-customer">
+                    <div class="join-card-top">
+                        <i class="bx bx-shopping-bag"></i>
+                        <h3>Customer marketplace</h3>
+                        <p>For households, chefs, and food businesses</p>
+                    </div>
+                    <ul class="join-perks">
+                        <li><i class="bx bx-check"></i> Locate farms and hubs on the map</li>
+                        <li><i class="bx bx-check"></i> Reserve baskets at farm-gate prices</li>
+                        <li><i class="bx bx-check"></i> Pick collection slots near you</li>
+                        <li><i class="bx bx-check"></i> Chat with the eGreen AI assistant</li>
+                    </ul>
+                    <a href="farmers%20interface/map.html" class="join-btn join-btn-customer">
+                        Continue as a customer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         FOOTER
+         ====================================================================== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-cta-box">
+                <h2>Join the exchange.</h2>
+                <p>Start buying or selling fresh, local produce today with zero middleman markup.</p>
+                <div class="footer-cta-actions">
+                    <a href="farmers%20interface/auth.html" class="btn-primary">Become a farmer</a>
+                    <a href="farmers%20interface/map.html" class="btn-ghost" style="color: var(--color-text); border-color: var(--color-border);">Shop local</a>
+                </div>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand" aria-label="MarketLink">
+                        <span class="brand-mark"><i class="bx bx-basket"></i></span>
+                        <span class="brand-name">Market<em>Link</em></span>
+                    </a>
+                    <p class="footer-brand-desc">
+                        A direct agricultural platform connecting local farmers with consumers. Fresher food, honest pricing, verified origin.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-navs">
+                    <div class="footer-col">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="farmers%20interface/auth.html"><span>Farmer Dashboard</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="farmers%20interface/map.html"><span>Customer Map</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="farmers%20interface/products.html"><span>Harvest Pre-orders</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="farmers%20interface/chatbot.html"><span>eGreen Assistant</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#"><span>About Us</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="#"><span>Trust & Safety</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="#"><span>Farmer Stories</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="#"><span>Contact Support</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Account</h4>
+                        <ul>
+                            <li><a href="farmers%20interface/auth.html"><span>Sign in</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="farmers%20interface/profile.html"><span>Your Profile</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                            <li><a href="farmers%20interface/settings.html"><span>Preferences</span><i class="bx bx-right-arrow-alt"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <span>&copy; 2026 MarketLink. All rights reserved.</span>
+                    <span class="footer-dot">&bull;</span>
+                    <span>Fair trade agriculture</span>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/index.js" defer></script>
+</body>
+</html>
+

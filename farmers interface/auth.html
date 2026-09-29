@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLink — Access</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/auth.css">
+</head>
+<body class="role-customer mode-signup">
+
+    <div class="auth-layout">
+        <!-- Form Section -->
+        <main class="auth-content">
+            <header class="auth-header">
+                <a href="../index.html" class="brand">
+                    <span class="brand-mark"><i class="bx bx-basket"></i></span>
+                    <span class="brand-name">Market<em>Link</em></span>
+                </a>
+            </header>
+
+            <div class="auth-form-container">
+                <!-- Interactive Sentence Toggle -->
+                <h1 class="statement-heading">
+                    I want to 
+                    <button class="toggle-btn" id="modeToggle">
+                        <span>sign up</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button> 
+                    as a 
+                    <button class="toggle-btn" id="roleToggle">
+                        <span>customer</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>.
+                </h1>
+
+                <p class="role-desc" id="roleDesc">
+                    Reserve fresh harvests directly from local farms. No middlemen, no markups.
+                </p>
+
+                <form id="authForm" class="editorial-form" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                    <!-- Dynamic Fields Container -->
+                    <div class="fields-wrapper">
+                        <!-- Customer Signup Fields -->
+                        <div class="field-group show-customer show-signup">
+                            <label for="c_name">Full Name</label>
+                            <input type="text" id="c_name" placeholder="How should we address you?">
+                        </div>
+                        <div class="field-group show-customer show-signup">
+                            <label for="c_neighborhood">Neighborhood</label>
+                            <input type="text" id="c_neighborhood" placeholder="E.g. Ikeja, Lagos (to find nearby hubs)">
+                        </div>
+
+                        <!-- Farmer Signup Fields -->
+                        <div class="field-group show-farmer show-signup">
+                            <label for="f_name">Farm Name</label>
+                            <input type="text" id="f_name" placeholder="The name of your farm or cooperative">
+                        </div>
+                        <div class="field-group show-farmer show-signup">
+                            <label for="f_location">Farm Location</label>
+                            <input type="text" id="f_location" placeholder="Where is your land located?">
+                        </div>
+                        <div class="field-group show-farmer show-signup">
+                            <label for="f_produce">Primary Crop Type</label>
+                            <select id="f_produce">
+                                <option value="" disabled selected>Select what you grow...</option>
+                                <option value="vegetables">Leafy Greens & Vegetables</option>
+                                <option value="tubers">Roots & Tubers</option>
+                                <option value="grains">Grains & Legumes</option>
+                                <option value="fruits">Fruits</option>
+                            </select>
+                        </div>
+
+                        <!-- Shared Login/Signup Fields -->
+                        <div class="field-group show-all">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="field-group show-all">
+                            <label for="password">Password</label>
+                            <div class="pwd-input">
+                                <input type="password" id="password" required>
+                                <button type="button" class="pwd-toggle"><i class="bx bx-show"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-action" id="submitBtn">Create my account</button>
+                </form>
+            </div>
+            
+            <footer class="auth-footer">
+                <p>By continuing, you agree to MarketLink's <a href="#">Terms of Exchange</a>.</p>
+            </footer>
+        </main>
+
+        <!-- Imagery Section -->
+        <aside class="auth-visual">
+            <!-- Customer Image: Fresh market basket -->
+            <div class="visual-layer customer-visual active">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d69104a47?auto=format&fit=crop&w=1200&q=80" alt="Fresh market produce">
+            </div>
+            <!-- Farmer Image: Agricultural/Soil focus -->
+            <div class="visual-layer farmer-visual">
+                <img src="https://images.unsplash.com/photo-1595840251141-8f553a1ec466?auto=format&fit=crop&w=1200&q=80" alt="Farmer working the soil">
+            </div>
+        </aside>
+    </div>
+
+    <script src="./assets/js/auth.js"></script>
+</body>
+</html>
+
