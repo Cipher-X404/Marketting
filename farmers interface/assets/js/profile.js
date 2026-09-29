@@ -185,8 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     actionLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            // Implement any custom link logic here (modals, routing, etc.)
-            console.log(`Action clicked: ${this.getAttribute('href')}`);
         });
     });
 });

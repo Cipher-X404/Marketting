@@ -1,0 +1,41 @@
+/* =========================================================
+   NOTIFICATIONS — the noticeboard
+   ========================================================= */
+.n-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.n-list { margin-top: 24px; display: grid; gap: 10px; max-width: 900px; }
+.n-day { margin: 18px 0 4px; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--color-text-muted); }
+.n-day::after { content: ''; flex: 1; border-top: 2px dashed var(--color-border); }
+.n-item {
+    position: relative; display: grid; grid-template-columns: 52px 1fr auto; gap: 16px; align-items: center; padding: 16px 18px 16px 22px; cursor: pointer;
+    background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--r-lg);
+    transition: transform .3s var(--ease), box-shadow .3s, border-color .25s, opacity .35s;
+    animation: line-in .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 50ms);
+}
+.n-item::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 5px; border-radius: 0 5px 5px 0; background: var(--color-secondary); transform: scaleY(0); transition: transform .4s var(--spring); }
+.n-item.unread { background: color-mix(in srgb, var(--color-secondary) 9%, var(--color-surface)); border-color: color-mix(in srgb, var(--color-secondary) 45%, var(--color-border)); }
+.n-item.unread::before { transform: scaleY(1); }
+.n-item:hover { transform: translateX(6px); box-shadow: var(--shadow-md); }
+.n-item.leaving { opacity: 0; transform: translateX(80px); }
+.n-ic { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; font-size: 26px; background: var(--leaf-wash); color: var(--color-primary); transition: transform .4s var(--spring); }
+.n-item:hover .n-ic { transform: rotate(-8deg) scale(1.08); }
+.n-item[data-type="pickup"] .n-ic { background: var(--color-secondary); color: #172117; }
+.n-item[data-type="offers"] .n-ic { background: var(--color-warning-light); color: var(--color-warning); }
+.n-item[data-type="system"] .n-ic { background: var(--color-info-light); color: var(--color-info); }
+.n-body { min-width: 0; }
+.n-body h3 { font-family: var(--font-body); font-size: 15.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.n-body h3 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary); animation: pulse-ring 2s infinite; flex: none; }
+.n-body p { font-size: 14px; color: var(--color-text-secondary); margin-top: 2px; line-height: 1.5; }
+.n-body time { font-size: 12px; color: var(--color-text-muted); font-weight: 600; }
+.n-body .go-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--color-primary); }
+.n-body .go-link i { transition: transform .25s var(--spring); }
+.n-item:hover .go-link i { transform: translateX(5px); }
+.n-tools { display: flex; gap: 4px; opacity: .55; transition: opacity .2s; }
+.n-item:hover .n-tools, .n-item:focus-within .n-tools { opacity: 1; }
+.n-tools button { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; font-size: 19px; color: var(--color-text-muted); transition: background .2s, color .2s, transform .25s var(--spring); }
+.n-tools button:hover { background: var(--color-bg-tertiary); color: var(--color-primary); transform: scale(1.12); }
+.n-tools button.del:hover { color: var(--color-danger); }
+@media (max-width: 640px) {
+    .n-item { grid-template-columns: 44px 1fr; padding: 14px; }
+    .n-ic { width: 44px; height: 44px; font-size: 22px; }
+    .n-tools { grid-column: 1 / -1; justify-content: flex-end; opacity: 1; }
+}

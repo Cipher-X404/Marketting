@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.5,
             reviews: 164,
             locationName: 'Kaduna Central',
-            avatar: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/products/veg-basket.jpg',
             lat: 10.5250,
             lng: 7.4420
         },
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.7,
             reviews: 54,
             locationName: 'Kawo, Kaduna',
-            avatar: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/products/roma-basket.jpg',
             lat: 10.5600,
             lng: 7.4000
         },
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.4,
             reviews: 142,
             locationName: 'Kawo, Kaduna',
-            avatar: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/products/veg-basket.jpg',
             lat: 10.5700,
             lng: 7.4450
         },
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.6,
             reviews: 89,
             locationName: 'Rigasa, Kaduna',
-            avatar: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/products/plum-tomato.jpg',
             lat: 10.5100,
             lng: 7.3700
         },
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.7,
             reviews: 81,
             locationName: 'Sabon Tasha, Kaduna',
-            avatar: 'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/products/roma-basket.jpg',
             lat: 10.4650,
             lng: 7.4600
         }

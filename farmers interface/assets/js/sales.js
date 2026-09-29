@@ -188,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- CHART.JS CONFIGURATIONS ---
-    // Make sure Chart.js is imported in your main HTML file
+    // Chart.js comes from a CDN; skip the charts (rest of the page still works) if it failed to load
+    if (typeof Chart === 'undefined') return;
 
     // Theme Colors based on your roots
     const colPrimary = getCSSVar('--color-primary') || '#16A34A';

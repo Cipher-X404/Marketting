@@ -169,17 +169,17 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Tomatoes (2kg), Lettuce (1 bunch) +1 more",
             productsCategory: "Tomatoes",
-            productsThumb: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/plum-tomato.jpg",
             total: 28.50,
             status: "Pending",
             pickupDate: "Apr 28, 2025",
             pickupTime: "8:00 AM - 12:00 PM",
             pickupLocation: "Green Valley Farm Stall",
             items: [
-                { name: "Tomatoes", qty: "2 kg × $4.00", price: 8.00, img: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop" },
-                { name: "Lettuce", qty: "1 bunch × $2.50", price: 2.50, img: "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=80&h=80&fit=crop" },
-                { name: "Carrots", qty: "1 kg × $3.00", price: 3.00, img: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=80&h=80&fit=crop" },
-                { name: "Fresh Eggs", qty: "1 dozen × $4.00", price: 4.00, img: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?w=80&h=80&fit=crop" }
+                { name: "Tomatoes", qty: "2 kg × $4.00", price: 8.00, img: "../assets/images/products/plum-tomato.jpg" },
+                { name: "Lettuce", qty: "1 bunch × $2.50", price: 2.50, img: "../assets/images/products/lettuce-heads.jpg" },
+                { name: "Carrots", qty: "1 kg × $3.00", price: 3.00, img: "../assets/images/products/carrots.jpg" },
+                { name: "Fresh Eggs", qty: "1 dozen × $4.00", price: 4.00, img: "../assets/images/products/brown-eggs.jpg" }
             ]
         },
         {
@@ -194,15 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Carrots (3kg), Eggs (1 dozen)",
             productsCategory: "Carrots",
-            productsThumb: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/carrots.jpg",
             total: 22.00,
             status: "Accepted",
             pickupDate: "Apr 29, 2025",
             pickupTime: "8:00 AM - 12:00 PM",
             pickupLocation: "Main Market Stall",
             items: [
-                { name: "Carrots", qty: "3 kg × $3.00", price: 9.00, img: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=80&h=80&fit=crop" },
-                { name: "Fresh Eggs", qty: "1 dozen × $4.00", price: 4.00, img: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?w=80&h=80&fit=crop" }
+                { name: "Carrots", qty: "3 kg × $3.00", price: 9.00, img: "../assets/images/products/carrots.jpg" },
+                { name: "Fresh Eggs", qty: "1 dozen × $4.00", price: 4.00, img: "../assets/images/products/brown-eggs.jpg" }
             ]
         },
         {
@@ -217,14 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Lettuce (2kg), Spinach (1kg)",
             productsCategory: "Lettuce",
-            productsThumb: "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/lettuce-heads.jpg",
             total: 16.75,
             status: "Completed",
             pickupDate: "Apr 27, 2025",
             pickupTime: "8:00 AM - 12:00 PM",
             pickupLocation: "Green Valley Farm Stall",
             items: [
-                { name: "Lettuce", qty: "2 kg × $2.50", price: 5.00, img: "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=80&h=80&fit=crop" }
+                { name: "Lettuce", qty: "2 kg × $2.50", price: 5.00, img: "../assets/images/products/lettuce-heads.jpg" }
             ]
         },
         {
@@ -239,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Potatoes (5kg), Onions (2kg)",
             productsCategory: "Potatoes",
-            productsThumb: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/potatoes.jpg",
             total: 24.50,
             status: "Accepted",
             pickupDate: "Apr 28, 2025",
             pickupTime: "8:00 AM - 12:00 PM",
             pickupLocation: "Main Market Stall",
             items: [
-                { name: "Potatoes", qty: "5 kg × $2.50", price: 12.50, img: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=80&h=80&fit=crop" }
+                { name: "Potatoes", qty: "5 kg × $2.50", price: 12.50, img: "../assets/images/products/potatoes.jpg" }
             ]
         },
         {
@@ -261,14 +261,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Bananas (2kg), Apples (1kg)",
             productsCategory: "Bananas",
-            productsThumb: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/bananas.jpg",
             total: 12.00,
             status: "Pending",
             pickupDate: "Apr 29, 2025",
             pickupTime: "1:00 PM - 4:00 PM",
             pickupLocation: "Green Valley Farm Stall",
             items: [
-                { name: "Bananas", qty: "2 kg × $3.00", price: 6.00, img: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=80&h=80&fit=crop" }
+                { name: "Bananas", qty: "2 kg × $3.00", price: 6.00, img: "../assets/images/products/bananas.jpg" }
             ]
         },
         {
@@ -283,14 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Cabbage (2kg), Green Pepper (1kg)",
             productsCategory: "Tomatoes",
-            productsThumb: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/plum-tomato.jpg",
             total: 18.50,
             status: "Cancelled",
             pickupDate: "Apr 26, 2025",
             pickupTime: "8:00 AM - 12:00 PM",
             pickupLocation: "Main Market Stall",
             items: [
-                { name: "Cabbage", qty: "2 kg × $4.00", price: 8.00, img: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop" }
+                { name: "Cabbage", qty: "2 kg × $4.00", price: 8.00, img: "../assets/images/products/plum-tomato.jpg" }
             ]
         },
         {
@@ -305,14 +305,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Sweet Potatoes (3kg), Carrots (1kg)",
             productsCategory: "Carrots",
-            productsThumb: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/carrots.jpg",
             total: 15.75,
             status: "Completed",
             pickupDate: "Apr 25, 2025",
             pickupTime: "8:00 AM - 12:00 PM",
             pickupLocation: "Green Valley Farm Stall",
             items: [
-                { name: "Carrots", qty: "1 kg × $3.00", price: 3.00, img: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=80&h=80&fit=crop" }
+                { name: "Carrots", qty: "1 kg × $3.00", price: 3.00, img: "../assets/images/products/carrots.jpg" }
             ]
         },
         {
@@ -327,14 +327,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             productsSummary: "Green Pepper (2kg), Tomatoes (1kg)",
             productsCategory: "Tomatoes",
-            productsThumb: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop",
+            productsThumb: "../assets/images/products/plum-tomato.jpg",
             total: 14.20,
             status: "Pending",
             pickupDate: "Apr 27, 2025",
             pickupTime: "1:00 PM - 4:00 PM",
             pickupLocation: "Main Market Stall",
             items: [
-                { name: "Tomatoes", qty: "1 kg × $4.00", price: 4.00, img: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop" }
+                { name: "Tomatoes", qty: "1 kg × $4.00", price: 4.00, img: "../assets/images/products/plum-tomato.jpg" }
             ]
         }
     ];

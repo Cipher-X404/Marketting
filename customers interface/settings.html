@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/css/account.css">
+</head>
+<body data-page="settings" data-guard="auth">
+
+<main id="page">
+
+    <div class="page-head reveal">
+        <div><span class="eyebrow">Make it yours</span><h1><span class="hl">Settings</span></h1><p>Choose your pickup hub, what we notify you about and how MarketLink looks.</p></div>
+    </div>
+    <div class="st-layout">
+        <nav class="st-nav" id="stNav" aria-label="Settings sections">
+            <a href="#hub" class="on"><i class='bx bx-store-alt'></i> Pickup</a>
+            <a href="#notifications"><i class='bx bx-bell'></i> Notifications</a>
+            <a href="#appearance"><i class='bx bx-palette'></i> Appearance</a>
+            <a href="#data"><i class='bx bx-data'></i> Your data</a>
+        </nav>
+        <div class="st-body">
+            <section class="card st-sec" id="hub">
+                <h2><i class='bx bx-store-alt'></i> Pickup preferences</h2>
+                <p class="muted">Your default hub is used to show pickup dates and distances across the site.</p>
+                <div class="hub-radios" id="stHubs"></div>
+                <h3 class="co-sub">If something sells out</h3>
+                <div class="pill-radios" id="stSub">
+                    <label><input type="radio" name="sub" value="ask"><span><i class='bx bx-message-rounded-dots'></i> Ask me first</span></label>
+                    <label><input type="radio" name="sub" value="swap"><span><i class='bx bx-transfer'></i> Swap for similar</span></label>
+                    <label><input type="radio" name="sub" value="skip"><span><i class='bx bx-x-circle'></i> Skip the item</span></label>
+                </div>
+            </section>
+            <section class="card st-sec" id="notifications">
+                <h2><i class='bx bx-bell'></i> Notifications</h2>
+                <p class="muted">Pick what deserves a ping.</p>
+                <div class="st-rows" id="stNotify"></div>
+            </section>
+            <section class="card st-sec" id="appearance">
+                <h2><i class='bx bx-palette'></i> Appearance</h2>
+                <div class="theme-cards" id="stTheme">
+                    <label><input type="radio" name="theme" value="light"><span class="tc light"><i class='bx bx-sun'></i><b>Light</b><em></em></span></label>
+                    <label><input type="radio" name="theme" value="dark"><span class="tc dark"><i class='bx bx-moon'></i><b>Dark</b><em></em></span></label>
+                    <label><input type="radio" name="theme" value="system"><span class="tc sys"><i class='bx bx-desktop'></i><b>System</b><em></em></span></label>
+                </div>
+            </section>
+            <section class="card st-sec" id="data">
+                <h2><i class='bx bx-data'></i> Your data</h2>
+                <p class="muted">MarketLink is a demo. Everything lives in this browser, nothing is sent to a server.</p>
+                <div class="st-rows">
+                    <div class="st-row"><div><b>Export my data</b><small>Download your profile, orders and favorites as a file.</small></div><button class="btn btn-ghost btn-sm" id="btnExport"><i class='bx bx-download'></i> Export</button></div>
+                    <div class="st-row"><div><b>Reset demo data</b><small>Restore the sample orders, notifications and favorites.</small></div><button class="btn btn-soft btn-sm" id="btnReset"><i class='bx bx-revision'></i> Reset</button></div>
+                    <div class="st-row"><div><b>Sign out</b><small>You can sign back in with the same email.</small></div><button class="btn btn-ghost btn-sm" data-signout><i class='bx bx-log-out'></i> Sign out</button></div>
+                    <div class="st-row danger"><div><b>Delete account</b><small>Erase your profile and everything stored on this device.</small></div><button class="btn btn-danger btn-sm" id="btnDelete"><i class='bx bx-trash'></i> Delete</button></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/account.js"></script>
+</body>
+</html>

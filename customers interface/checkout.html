@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Checkout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+</head>
+<body data-page="checkout" data-nav="cart" data-guard="auth">
+
+<main id="page">
+
+    <div class="page-head reveal">
+        <div>
+            <span class="eyebrow">Step 2 of 2</span>
+            <h1>Almost <span class="hl">harvest</span> time</h1>
+            <p>Choose where and when to collect, then confirm. No card is needed to reserve.</p>
+        </div>
+        <a class="btn btn-ghost" href="cart.html"><i class='bx bx-arrow-back'></i> Back to basket</a>
+    </div>
+
+    <div id="coEmpty" hidden></div>
+    <div class="co-layout" id="coLayout">
+        <section>
+            <ol class="stepper" id="stepper" aria-label="Checkout progress">
+                <li data-s="1" class="on"><b><i class='bx bx-store-alt'></i></b><span>Pickup</span></li>
+                <li data-s="2"><b><i class='bx bx-user'></i></b><span>Details</span></li>
+                <li data-s="3"><b><i class='bx bx-wallet'></i></b><span>Payment</span></li>
+                <li data-s="4"><b><i class='bx bx-check-double'></i></b><span>Confirm</span></li>
+            </ol>
+
+            <!-- 1 pickup -->
+            <div class="co-step card" data-step="1">
+                <h2>Where will you collect?</h2>
+                <div class="hub-radios" id="hubRadios"></div>
+                <h3 class="co-sub">Pick a pickup day</h3>
+                <div class="slot-radios" id="slotRadios"></div>
+                <p class="lock-note" id="lockNote"></p>
+            </div>
+
+            <!-- 2 details -->
+            <div class="co-step card" data-step="2" hidden>
+                <h2>Who is collecting?</h2>
+                <div class="form-row">
+                    <label class="field" data-f="name"><span>Full name</span><div class="input-wrap"><i class='bx bx-user lead'></i><input class="input" id="cName" autocomplete="name" placeholder="Adaeze Okafor"></div><em class="err">Enter the name on the pickup.</em></label>
+                    <label class="field" data-f="phone"><span>Phone number</span><div class="input-wrap"><i class='bx bx-phone lead'></i><input class="input" id="cPhone" type="tel" autocomplete="tel" placeholder="+234 801 234 5678"></div><em class="err">Enter a valid phone number.</em></label>
+                </div>
+                <label class="field"><span>Note for the farmer <small class="muted">(optional)</small></span><textarea class="textarea" id="cNote" placeholder="e.g. Please pick the greener tomatoes."></textarea></label>
+                <h3 class="co-sub">If something sells out</h3>
+                <div class="pill-radios" id="subRadios">
+                    <label><input type="radio" name="sub" value="ask" checked><span><i class='bx bx-message-rounded-dots'></i> Ask me first</span></label>
+                    <label><input type="radio" name="sub" value="swap"><span><i class='bx bx-transfer'></i> Swap for similar</span></label>
+                    <label><input type="radio" name="sub" value="skip"><span><i class='bx bx-x-circle'></i> Skip the item</span></label>
+                </div>
+            </div>
+
+            <!-- 3 payment -->
+            <div class="co-step card" data-step="3" hidden>
+                <h2>How would you like to pay?</h2>
+                <div class="pay-radios" id="payRadios">
+                    <label class="pay-opt"><input type="radio" name="pay" value="pickup" checked><span class="pay-body"><i class='bx bx-money'></i><span><b>Pay at pickup</b><small>Cash or transfer at the hub when you collect. Nothing due today.</small></span><em class="tickmark"><i class='bx bxs-check-circle'></i></em></span></label>
+                    <label class="pay-opt"><input type="radio" name="pay" value="transfer"><span class="pay-body"><i class='bx bx-buildings'></i><span><b>Bank transfer</b><small>Pay now to MarketLink Escrow and your order is prioritised.</small></span><em class="tickmark"><i class='bx bxs-check-circle'></i></em></span></label>
+                    <label class="pay-opt"><input type="radio" name="pay" value="card"><span class="pay-body"><i class='bx bx-credit-card'></i><span><b>Debit card</b><small>Demo only. No real charge is made in this prototype.</small></span><em class="tickmark"><i class='bx bxs-check-circle'></i></em></span></label>
+                </div>
+                <div class="pay-extra" id="payTransfer" hidden>
+                    <div class="bank"><div><small>Bank</small><b>Green Trust Bank</b></div><div><small>Account name</small><b>MarketLink Escrow</b></div><div><small>Account number</small><b>0123456789</b> <button class="link" data-copy="0123456789" type="button"><i class='bx bx-copy'></i></button></div></div>
+                    <p class="muted" style="margin-top:10px;font-size:13px">Use your order ID as the reference. We release payment to farmers only after you collect.</p>
+                </div>
+                <div class="pay-extra" id="payCard" hidden>
+                    <div class="form-row">
+                        <label class="field" data-f="card" style="grid-column:1/-1"><span>Card number</span><div class="input-wrap"><i class='bx bx-credit-card lead'></i><input class="input" id="cCard" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19" autocomplete="cc-number"></div><em class="err">Enter a 16 digit card number.</em></label>
+                        <label class="field" data-f="exp"><span>Expiry</span><input class="input" id="cExp" inputmode="numeric" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp"><em class="err">Use MM/YY.</em></label>
+                        <label class="field" data-f="cvc"><span>CVC</span><input class="input" id="cCvc" inputmode="numeric" placeholder="123" maxlength="4" autocomplete="cc-csc"><em class="err">3 or 4 digits.</em></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 confirm -->
+            <div class="co-step card" data-step="4" hidden>
+                <h2>Look right?</h2>
+                <div id="reviewBox"></div>
+                <label class="check-row"><input type="checkbox" id="cTerms"><span class="box"></span><span>I will collect my basket during the chosen window. I understand it cannot be cancelled after the harvest lock.</span></label>
+                <p class="err-line" id="termsErr" hidden>Please confirm to place your order.</p>
+            </div>
+
+            <div class="co-nav">
+                <button class="btn btn-ghost" id="coBack" hidden><i class='bx bx-left-arrow-alt'></i> Back</button>
+                <button class="btn btn-primary btn-lg" id="coNext">Continue <i class='bx bx-right-arrow-alt go'></i></button>
+            </div>
+        </section>
+        <aside class="receipt-wrap" id="coSummary"></aside>
+    </div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/checkout.js"></script>
+</body>
+</html>

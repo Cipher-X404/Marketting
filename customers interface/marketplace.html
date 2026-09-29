@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarketLink: reserve fresh produce direct from local farms and collect it at a pickup hub near you.">
+    <meta name="theme-color" content="#16A34A">
+    <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+    <title>MarketLink — Marketplace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/shell.css">
+    <link rel="stylesheet" href="./assets/css/market.css">
+</head>
+<body data-page="marketplace">
+
+<main id="page">
+
+    <div class="page-head reveal">
+        <div>
+            <span class="eyebrow">The marketplace</span>
+            <h1>Everything that is <span class="hl">growing</span> this week</h1>
+            <p id="mkLead">Straight from the farm. Reserve now, collect at your hub.</p>
+        </div>
+        <div class="mk-tools">
+            <label class="mk-sort"><i class='bx bx-sort-alt-2'></i>
+                <select id="sort" class="select" aria-label="Sort products">
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest arrivals</option>
+                    <option value="price-asc">Price: low to high</option>
+                    <option value="price-desc">Price: high to low</option>
+                    <option value="rating">Top rated</option>
+                </select>
+            </label>
+            <div class="seg" role="group" aria-label="View">
+                <button id="viewGrid" class="on" aria-label="Grid view" aria-pressed="true"><i class='bx bx-grid-alt'></i></button>
+                <button id="viewList" aria-label="List view" aria-pressed="false"><i class='bx bx-list-ul'></i></button>
+            </div>
+            <button class="btn btn-ghost mk-filter-btn" id="openFilters"><i class='bx bx-slider-alt'></i> Filters <span class="n" id="filterN" hidden>0</span></button>
+        </div>
+    </div>
+
+    <div class="chip-rail" id="catRail" role="tablist" aria-label="Categories"></div>
+
+    <div class="mk">
+        <aside class="filters" id="filters" aria-label="Filters">
+            <div class="filters-head"><h3>Filters</h3><button class="modal-x" id="closeFilters" aria-label="Close filters"><i class='bx bx-x'></i></button></div>
+            <div class="f-group">
+                <h4>Farm</h4>
+                <div id="farmChecks"></div>
+            </div>
+            <div class="f-group">
+                <h4>Max price <output id="priceOut">₦20,000</output></h4>
+                <input type="range" id="price" min="500" max="20000" step="500" value="20000" aria-label="Maximum price">
+                <div class="range-scale"><span>₦500</span><span>₦20,000</span></div>
+            </div>
+            <div class="f-group">
+                <h4>Good to know</h4>
+                <label class="switch-row"><span>Organic only</span><span class="toggle"><input type="checkbox" id="fOrganic"><i></i></span></label>
+                <label class="switch-row"><span>In stock only</span><span class="toggle"><input type="checkbox" id="fStock"><i></i></span></label>
+                <label class="switch-row"><span>4.7 stars and up</span><span class="toggle"><input type="checkbox" id="fRating"><i></i></span></label>
+            </div>
+            <button class="btn btn-soft btn-block" id="resetFilters"><i class='bx bx-reset'></i> Reset filters</button>
+        </aside>
+        <div class="filters-scrim" id="filtersScrim"></div>
+
+        <section class="results">
+            <div class="result-bar"><span id="resultCount" aria-live="polite">Loading…</span><div class="active-tags" id="activeTags"></div></div>
+            <div class="pgrid" id="grid"></div>
+            <div class="more-wrap"><button class="btn btn-ghost btn-lg" id="loadMore" hidden><i class='bx bx-down-arrow-alt'></i> Show more</button></div>
+        </section>
+    </div>
+
+</main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/shell.js"></script>
+    <script src="./assets/js/market.js"></script>
+</body>
+</html>
