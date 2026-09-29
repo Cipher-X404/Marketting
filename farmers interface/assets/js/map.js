@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.8,
             reviews: 128,
             locationName: 'Kaduna, Nigeria',
-            avatar: 'https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/farms/ibe-organic.jpg',
             lat: 10.5350,
             lng: 7.4200
         },
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.9,
             reviews: 72,
             locationName: 'Sabon Tasha, Kaduna',
-            avatar: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/farms/green-valley.jpg',
             lat: 10.4800,
             lng: 7.4500
         },

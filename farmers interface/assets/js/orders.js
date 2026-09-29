@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Sarah Johnson",
                 email: "sarah@email.com",
                 phone: "+234 801 234 5678",
-                avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-01.jpg"
             },
             productsSummary: "Tomatoes (2kg), Lettuce (1 bunch) +1 more",
             productsCategory: "Tomatoes",
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Michael Brown",
                 email: "michael@email.com",
                 phone: "+234 802 345 6789",
-                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-02.jpg"
             },
             productsSummary: "Carrots (3kg), Eggs (1 dozen)",
             productsCategory: "Carrots",
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Emily Davis",
                 email: "emily@email.com",
                 phone: "+234 803 456 7890",
-                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-03.jpg"
             },
             productsSummary: "Lettuce (2kg), Spinach (1kg)",
             productsCategory: "Lettuce",
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "James Wilson",
                 email: "james@email.com",
                 phone: "+234 804 567 8901",
-                avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-04.jpg"
             },
             productsSummary: "Potatoes (5kg), Onions (2kg)",
             productsCategory: "Potatoes",
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Linda Martinez",
                 email: "linda@email.com",
                 phone: "+234 805 678 9012",
-                avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-05.jpg"
             },
             productsSummary: "Bananas (2kg), Apples (1kg)",
             productsCategory: "Bananas",
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "David Clark",
                 email: "david@email.com",
                 phone: "+234 806 789 0123",
-                avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-06.jpg"
             },
             productsSummary: "Cabbage (2kg), Green Pepper (1kg)",
             productsCategory: "Tomatoes",
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Sophia Lee",
                 email: "sophia@email.com",
                 phone: "+234 807 890 1234",
-                avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-01.jpg"
             },
             productsSummary: "Sweet Potatoes (3kg), Carrots (1kg)",
             productsCategory: "Carrots",
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: "Daniel Harris",
                 email: "daniel@email.com",
                 phone: "+234 808 901 2345",
-                avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop&crop=faces"
+                avatar: "../assets/images/avatars/avatar-02.jpg"
             },
             productsSummary: "Green Pepper (2kg), Tomatoes (1kg)",
             productsCategory: "Tomatoes",

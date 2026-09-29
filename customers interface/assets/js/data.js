@@ -23,25 +23,25 @@ window.ML = window.ML || {};
     ML.FARMS = [
         {
             id: 'green-valley', name: 'Green Valley Farm', area: 'Epe, Lagos', lat: 6.5841, lng: 3.9830,
-            rating: 4.9, reviews: 212, since: 2014, img: U('1500937386664-56d1dfef3854'),
+            rating: 4.9, reviews: 212, since: 2014, img: IMG('farms/green-valley.jpg'),
             about: 'Family-run fields on the Epe lagoon plain. Green Valley grows tomatoes, peppers and mangoes without synthetic pesticides and only harvests what has been reserved.',
             specialty: ['Tomatoes', 'Peppers', 'Mangoes']
         },
         {
             id: 'ibe-organic', name: 'Ibe Organic Crops', area: 'Ikorodu, Lagos', lat: 6.6194, lng: 3.5105,
-            rating: 4.8, reviews: 168, since: 2017, img: U('1625246333195-78d9c38ad449'),
+            rating: 4.8, reviews: 168, since: 2017, img: IMG('farms/ibe-organic.jpg'),
             about: 'Greenhouse-and-field growers certified organic since 2019. Best known for leafy greens that go from bed to hub in under six hours.',
             specialty: ['Leafy greens', 'Carrots', 'Herbs']
         },
         {
             id: 'sunrise-agro', name: 'Sunrise Agro Farms', area: 'Ijebu-Ode, Ogun', lat: 6.8200, lng: 3.9200,
-            rating: 4.7, reviews: 134, since: 2012, img: U('1500382017468-9049fed747ef'),
+            rating: 4.7, reviews: 134, since: 2012, img: IMG('farms/sunrise-agro.jpg'),
             about: 'Mixed-crop farm on red loam soil. Sweet potatoes, African spinach and brown eggs from birds that actually roam.',
             specialty: ['Sweet potatoes', 'Spinach', 'Eggs']
         },
         {
             id: 'ogun-river', name: 'Ogun River Harvest', area: 'Abeokuta, Ogun', lat: 7.1475, lng: 3.3619,
-            rating: 4.8, reviews: 97, since: 2016, img: U('1472099645785-5658abf4ff4e'),
+            rating: 4.8, reviews: 97, since: 2016, img: IMG('farms/ogun-river.jpg'),
             about: 'River-valley farm cooperative growing yam, pineapples and honey beans across 40 smallholder plots.',
             specialty: ['Yam', 'Pineapple', 'Beans']
         },
