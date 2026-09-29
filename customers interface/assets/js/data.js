@@ -9,7 +9,6 @@ window.ML = window.ML || {};
     'use strict';
 
     const IMG = (p) => ((window.ML_CONFIG && window.ML_CONFIG.ASSET_BASE) || '../assets/images/') + p;
-    const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w || 700}&q=70`;
 
     ML.CATEGORIES = [
         { id: 'greens',  name: 'Leafy Greens',       icon: 'bx-leaf',        blurb: 'Cut at dawn' },
@@ -47,7 +46,7 @@ window.ML = window.ML || {};
         },
         {
             id: 'badagry-coop', name: 'Badagry Harvest Co-op', area: 'Badagry, Lagos', lat: 6.4149, lng: 2.8876,
-            rating: 4.6, reviews: 121, since: 2015, img: U('1560493676-04071c5f467b'),
+            rating: 4.6, reviews: 121, since: 2015, img: IMG('farms/badagry-coop.jpg'),
             about: 'A 60-member cooperative on the coastal sand belt. Plum tomatoes, plantains and free-range eggs at fair, transparent prices.',
             specialty: ['Tomatoes', 'Bananas', 'Eggs']
         }

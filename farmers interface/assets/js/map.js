@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating: 4.6,
             reviews: 96,
             locationName: 'Tudun Wada, Kaduna',
-            avatar: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=150&q=80',
+            avatar: '../assets/images/farms/badagry-coop.jpg',
             lat: 10.5120,
             lng: 7.4280
         },
